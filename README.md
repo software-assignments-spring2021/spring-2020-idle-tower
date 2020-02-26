@@ -1,8 +1,8 @@
 # spring-2020-idle-tower
 
-# Food Check Proposal 
+# Food Check 
 
-## Overview
+## Project Vision Statement
 A web app for restaurant owners to better understand their business. 
 
 ## Project Title
