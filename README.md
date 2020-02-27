@@ -8,6 +8,20 @@ A web app for restaurant owners to better understand their business.
 ## Project Title
 Food Check
 
+## Themes 
+1. Front End 
+2. Backend 
+3. Database Integration 
+4. Deployment 
+
+## Timeline 
+Sprint 0 (practice)  --> Mar 03
+Sprint 1 (Front End)  --> Mar 26
+Sprint 2 (Back End) --> Apr 14
+Sprint 3 (Database Integration) --> Apr 28 
+Sprint 4 (Deployment) --> May 07
+
+
 ## What and Why?
 For restaurant owners:
 The F&B industry is fairly not digitalized, yet there are a lot of customer review sites that are online that a restaurant
