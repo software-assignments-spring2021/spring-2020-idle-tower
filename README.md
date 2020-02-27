@@ -14,7 +14,7 @@ Food Check
 3. Database Integration 
 4. Deployment 
 
-## Timeline 
+## Product Roadmap 
 Sprint 0 (practice)  --> Mar 03 <br/>
 Sprint 1 (Front End)  --> Mar 26 <br/>
 Sprint 2 (Back End) --> Apr 14 <br/>
@@ -71,7 +71,8 @@ Difficulties:
 - Getting most recent data will be constrained 
 
 ## Release Plan 
-- We aim to release after 3rd sprint. We belive that after the database is linked we will be able to release the inital version. From there more features and user stories will be added for greater functionality 
+- We aim to release after 3rd sprint. We belive that after the database is linked we will be able to release the inital version that can do the core features of NLP and rating tracking. From there more features and user stories will be added for greater functionality 
+
 
 ## Resources
 Yelp Data: https://www.yelp.com/dataset/download
