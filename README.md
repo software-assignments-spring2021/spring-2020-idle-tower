@@ -15,7 +15,7 @@ Food Check
 4. Deployment 
 
 ## Timeline 
-Sprint 0 (practice)  --> Mar 03
+Sprint 0 (practice)  --> Mar 03 \n
 Sprint 1 (Front End)  --> Mar 26
 Sprint 2 (Back End) --> Apr 14
 Sprint 3 (Database Integration) --> Apr 28 
