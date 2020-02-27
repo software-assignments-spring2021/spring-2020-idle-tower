@@ -9,13 +9,14 @@ A web app for restaurant owners to better understand their business.
 Food Check
 
 ## Themes 
+0. UX
 1. Front End 
 2. Backend 
 3. Database Integration 
 4. Deployment 
 
 ## Product Roadmap 
-Sprint 0 (practice)  --> Mar 03 <br/>
+Sprint 0 (UX)  --> Mar 03 <br/>
 Sprint 1 (Front End)  --> Mar 26 <br/>
 Sprint 2 (Back End) --> Apr 14 <br/>
 Sprint 3 (Database Integration) --> Apr 28 <br/>
