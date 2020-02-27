@@ -70,5 +70,8 @@ Difficulties:
 - Combing data on different API's will require some time and skills
 - Getting most recent data will be constrained 
 
+## Release Plan 
+- We aim to release after 3rd sprint. We belive that after the database is linked we will be able to release the inital version. From there more features and user stories will be added for greater functionality 
+
 ## Resources
 Yelp Data: https://www.yelp.com/dataset/download
