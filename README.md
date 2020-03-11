@@ -77,3 +77,8 @@ Difficulties:
 
 ## Resources
 Yelp Data: https://www.yelp.com/dataset/download
+
+Contributing: https://github.com/nyu-software-engineering/spring-2020-idle-tower/blob/master/CONTRIBUTING.md
+
+Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/blob/master/ux-design/Agile-wireframe.xd
+
