@@ -1,0 +1,28 @@
+$c-black: #0f0f0f;
+$c-white: #fff;
+
+
+$c-grey-darkest: #12263F;
+$c-grey-dark: #617691;
+$c-grey: #D4DDE9;
+$c-grey-light: #EDF1F5;
+$c-grey-lightest: #F5F7FA;
+
+
+$c-blue-darkest: #182749;
+$c-blue-dark: lighten($c-blue-darkest, 20);
+$c-blue: lighten($c-blue-dark, 20);
+$c-blue-light: lighten($c-blue, 20);
+$c-blue-lightest: lighten($c-blue-light, 20);
+
+$c-green-darkest: #0e301c;
+$c-green-dark: lighten($c-green-darkest, 20);
+$c-green: lighten($c-green-dark, 20);
+$c-green-light: lighten($c-green, 20);
+$c-green-lightest: lighten($c-green-light, 20);
+
+$c-red-darkest: #420707;
+$c-red-dark: lighten($c-red-darkest, 20);
+$c-red: lighten($c-red-dark, 20);
+$c-red-light: lighten($c-red, 20);
+$c-red-lightest: lighten($c-red-light, 20);
