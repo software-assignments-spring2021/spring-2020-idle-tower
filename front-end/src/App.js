@@ -1,6 +1,6 @@
 import React from 'react';
 import './lib/reset.css';
-import './App.css';
+import './App.scss';
 import {
 	BrowserRouter as Router,
 	Switch,
