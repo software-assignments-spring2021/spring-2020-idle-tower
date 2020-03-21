@@ -27,14 +27,16 @@ export default function App() {
 					</ul>
 				</nav>
 
-				<Switch>
-					<Route exact path="/">
-						<div>Home</div>
-					</Route>
-					<Route path="/example">
-						<div>Example</div>
-					</Route>
-				</Switch>
+				<div className="content">
+					<Switch>
+						<Route exact path="/">
+							<div>Home</div>
+						</Route>
+						<Route path="/example">
+							<div>Example</div>
+						</Route>
+					</Switch>
+				</div>
 			</div>
 		</Router>
 	);

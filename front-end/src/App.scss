@@ -3,3 +3,30 @@
 	font-size: 100%;
 	padding: 0 10px;
 }
+
+header {
+	display: block;
+	font-size: 3em;
+	font-weight: bold;
+	margin: 10px auto;
+}
+
+nav {
+	display: block;
+
+	ul {
+		list-style: disc;
+		margin-left: 20px;
+
+		li {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.content {
+	font-size: 1.2em;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: aliceblue;
+}
