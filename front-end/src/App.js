@@ -1,12 +1,16 @@
 import React from 'react';
-import './lib/reset.css';
-import './App.scss';
+import logo from './logo.svg';
+import './App.css';
+
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
 	Link
 } from "react-router-dom";
+
+// Components
+import Login from './Login.js';
 
 
 export default function App() {
@@ -22,21 +26,19 @@ export default function App() {
 							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/example">Example</Link>
+							<Link to="/login">Login</Link>
 						</li>
 					</ul>
 				</nav>
 
-				<div className="content">
-					<Switch>
-						<Route exact path="/">
-							<div>Home</div>
-						</Route>
-						<Route path="/example">
-							<div>Example</div>
-						</Route>
-					</Switch>
-				</div>
+				<Switch>
+					<Route exact path="/">
+						<div>Home</div>
+					</Route>
+					<Route path="/login">
+						<Login notificationText="Welcome to FoodCheck! Please login" error="Invalid credentials" />
+					</Route>
+				</Switch>
 			</div>
 		</Router>
 	);
