@@ -8,6 +8,8 @@ import {
 	Link
 } from "react-router-dom";
 
+import MarketResearch from './MarketResearch.js'
+
 
 export default function App() {
 	return (
@@ -30,7 +32,7 @@ export default function App() {
 				<div className="content">
 					<Switch>
 						<Route exact path="/">
-							<div>Home</div>
+							<MarketResearch />
 						</Route>
 						<Route path="/example">
 							<div>Example</div>
