@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import './RestaurantList.scss';
 
 
@@ -7,47 +6,39 @@ import './RestaurantList.scss';
 // TODO:
 // - move to own file
 const InfoBox = (props) => {
-	const id = props.id
-
-	const [data, setData] = useState(0);
-
-	// const response = await axios(
-	// 	"https://my.api.mockaroo.com/business.json?key=71f47770"
-	// );
-	// setData(response)
-
-	fetch('https://my.api.mockaroo.com/business.json?key=71f47770')
-		.then(response => response.json())
-		.then(d => {
-			console.log(d);
-			// setData([d]);
-
-			// if (d['error']) {
-			// 	// handle mockaroo API error
-			// }
-		})
-
-    return (
-        <div className="InfoBox" key={id}>
-            {data}
-        </div>
-    )
+	const data = props.data
+	return (
+		<div className="InfoBox" key={props.key}>
+			<div className="InfoBox__name">{ data['name'] }</div>
+			<div className="InfoBox__address">{ data['address'] }</div>
+			<div className="InfoBox__review_count">{ data['review_count'] }</div>
+		</div>
+	)
 }
 
 
 
 const RestaurantList = (props) => {
-	const rlist = props.restaurant_ids || [1,2,3];
-	const rows = []
-	for(const r of rlist) {
-		rows.push(<InfoBox id={r} key={r} />)
-	}
+	const data = props.response;
 
-    return (
-        <div className="RestaurantList">
-        	{rows}
-        </div>
-    )
+	const [rows, setRows] = useState([]);
+
+	useEffect(() => {
+		if (data != 0) {
+			const tempRows = []
+			for(const obj of data) {
+				tempRows.push(<InfoBox key={obj.business_id} data={obj} />)
+				console.log("rows: ", rows)
+			}
+			setRows(tempRows)
+		}
+	}, [data])
+
+	return (
+		<div className="RestaurantList">
+			{rows.map(obj => <div> {obj} </div>)}
+		</div>
+	)
 }
 
 export default RestaurantList;
