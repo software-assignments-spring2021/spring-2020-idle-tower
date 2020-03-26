@@ -32,7 +32,7 @@ export default function App() {
 				<div className="content">
 					<Switch>
 						<Route exact path="/">
-							<MarketResearch />
+							<MarketResearch title="Saved Restaurants" />
 						</Route>
 						<Route path="/example">
 							<div>Example</div>
