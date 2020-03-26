@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './RestaurantList.scss';
 
 
-
+// InfoBox component
+// TODO:
+// - move to own file
 const InfoBox = (props) => {
 	const id = props.id
 
