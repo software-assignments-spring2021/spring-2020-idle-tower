@@ -1,0 +1,19 @@
+.Login {
+	display: block;
+
+	form {
+		display: block;
+
+		label {
+			display: block;
+			width: auto;
+			margin: 5px 0;
+		}
+
+		input[type=text], input[type=password]{
+			display: block;
+			font-size: 1rem;
+			margin: 5px 5px 15px 5px 0;
+		}
+	}
+}
