@@ -1,3 +1,69 @@
-.InfoBox {
+$border: 1px solid red;
 
+.InfoBox {
+	display: block;
+	padding: 10px;
+	margin: 0 auto;
+	border: $border;
+	border-top: none;
+}
+// Add top-border back to first InfoBox
+.RestaurantList > :nth-child(1):nth-child(1) {
+	border-top: $border;
+}
+
+.InfoBox {
+	.col {
+		display: block;
+		flex-grow: 1;
+
+		&--icons {
+			text-align: right;
+		}
+	}
+
+	&__primary {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+
+		&__number {
+			display: inline-block;
+			padding: 10px 5px;
+		}
+
+		&__name {
+			display: inline-block;
+			padding: 10px 5px;
+		}
+
+		&__address {
+			display: block;
+		}
+
+		&__review_count {
+			display: block;
+		}
+
+		&__icon {
+			display: inline-block;
+			padding: 10px 5px;
+			margin: 10px auto;
+		}
+	}
+
+	&__secondary {
+		// display: flex;
+		display: none;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+
+		& > * {}
+	}
 }
