@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './RestaurantList.scss';
 
-
-// InfoBox component
-// TODO:
-// - move to own file
-const InfoBox = (props) => {
-	const data = props.data
-	return (
-		<div className="InfoBox" key={props.key}>
-			<div className="InfoBox__name">{ data['name'] }</div>
-			<div className="InfoBox__address">{ data['address'] }</div>
-			<div className="InfoBox__review_count">{ data['review_count'] }</div>
-		</div>
-	)
-}
-
-
+import InfoBox from './InfoBox.js';
 
 const RestaurantList = (props) => {
 	const data = props.response;
