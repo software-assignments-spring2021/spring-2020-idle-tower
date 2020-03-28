@@ -11,7 +11,10 @@ const RestaurantList = (props) => {
 		if (data != 0) {
 			const tempRows = []
 			for(const obj of data) {
-				tempRows.push(<InfoBox key={obj.business_id} data={obj} number={tempRows.length+1} />)
+				tempRows.push(<InfoBox
+					key={obj.business_id}
+					data={obj}
+					number={tempRows.length+1} />)
 				console.log("rows: ", rows)
 			}
 			setRows(tempRows)
@@ -20,7 +23,7 @@ const RestaurantList = (props) => {
 
 	return (
 		<div className="RestaurantList">
-			{rows.map(obj => <div> {obj} </div>)}
+			{rows.map(InfoBox => <div> {InfoBox} </div>)}
 		</div>
 	)
 }
