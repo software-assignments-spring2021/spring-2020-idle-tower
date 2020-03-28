@@ -5,22 +5,18 @@ const InfoBox = (props) => {
 	const data = props.data;
 
 	const [secondaryOpen, setSecondaryOpen] = useState(false);
-	
-
-	const INFO_BOX_SECONDARY_OPEN = "InfoBox__secondary InfoBox__secondary--open";
-	const INFO_BOX_SECONDARY_CLOSED = "InfoBox__secondary";
-	const [InfoBox__secondaryClasses, setInfoBox__secondaryClasses] = useState(INFO_BOX_SECONDARY_CLOSED);
 
 	const toggleSecondary = () => {
-		if (!secondaryOpen) {
-			setInfoBox__secondaryClasses(INFO_BOX_SECONDARY_OPEN)
-			setSecondaryOpen(true)
-		} else {
-			setInfoBox__secondaryClasses(INFO_BOX_SECONDARY_CLOSED)
-			setSecondaryOpen(false)
-		}
-
+		secondaryOpen ? setSecondaryOpen(false) : setSecondaryOpen(true);
 	};
+
+	const secondarySection =
+		<div className="InfoBox__secondary">
+			<div className="InfoBox__review_count">Review Count: { data['review_count'] }</div>
+			<div className="InfoBox__review_count">{ data['review_count'] }</div>
+			<div className="InfoBox__review_count">{ data['review_count'] }</div>
+			<div className="InfoBox__review_count">{ data['review_count'] }</div>
+		</div>;
 
 	return (
 		<div className="InfoBox">
@@ -35,12 +31,9 @@ const InfoBox = (props) => {
 					<div className="InfoBox__primary__icon">ICON</div>
 				</div>
 			</div>
-			<div className={ InfoBox__secondaryClasses }>
-				<div className="InfoBox__review_count">Review Count: { data['review_count'] }</div>
-				<div className="InfoBox__review_count">{ data['review_count'] }</div>
-				<div className="InfoBox__review_count">{ data['review_count'] }</div>
-				<div className="InfoBox__review_count">{ data['review_count'] }</div>
-			</div>
+
+            	{ secondaryOpen ? secondarySection : null }
+
 		</div>
 	)
 }
