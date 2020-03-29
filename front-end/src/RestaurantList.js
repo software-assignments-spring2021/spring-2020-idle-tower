@@ -8,14 +8,13 @@ const RestaurantList = (props) => {
 
 	const [rows, setRows] = useState([]);
 	useEffect(() => {
-		if (data != 0) {
+		if (data !== 0) {
 			const tempRows = []
 			for(const obj of data) {
 				tempRows.push(<InfoBox
 					key={obj.business_id}
 					data={obj}
 					number={tempRows.length+1} />)
-				console.log("rows: ", rows)
 			}
 			setRows(tempRows)
 		}

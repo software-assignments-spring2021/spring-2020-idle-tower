@@ -10,13 +10,14 @@ const InfoBox = (props) => {
 		secondaryOpen ? setSecondaryOpen(false) : setSecondaryOpen(true);
 	};
 
-	const secondarySection =
+	const secondarySection = (
 		<div className="InfoBox__secondary">
 			<div className="InfoBox__review_count">Review Count: { data['review_count'] }</div>
 			<div className="InfoBox__review_count">{ data['review_count'] }</div>
 			<div className="InfoBox__review_count">{ data['review_count'] }</div>
 			<div className="InfoBox__review_count">{ data['review_count'] }</div>
-		</div>;
+		</div>
+	);
 
 	return (
 		<div className="InfoBox">
@@ -31,9 +32,8 @@ const InfoBox = (props) => {
 					<div className="InfoBox__primary__icon">ICON</div>
 				</div>
 			</div>
-
-            	{ secondaryOpen ? secondarySection : null }
-
+			
+			{ secondaryOpen ? secondarySection : null }
 		</div>
 	)
 }
