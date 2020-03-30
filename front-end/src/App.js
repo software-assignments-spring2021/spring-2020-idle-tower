@@ -8,7 +8,7 @@ import {
 	Link
 } from "react-router-dom";
 
-import MarketResearch from './MarketResearch.js'
+import MarketResearchPage from './MarketResearchPage.js'
 
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
 				<div className="content">
 					<Switch>
 						<Route exact path="/">
-							<MarketResearch title="Saved Restaurants" />
+							<MarketResearchPage />
 						</Route>
 						<Route path="/example">
 							<div>Example</div>
