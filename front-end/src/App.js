@@ -10,7 +10,7 @@ import {
 
 // Components
 import Login from "./login.js";
-import MarketResearch from './MarketResearchPage.js'
+import MarketResearchPage from './MarketResearchPage.js'
 
 
 export default function App() {
