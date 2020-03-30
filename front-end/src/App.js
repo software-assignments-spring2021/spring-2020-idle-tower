@@ -8,7 +8,9 @@ import {
 	Link
 } from "react-router-dom";
 
-import MarketResearchPage from './MarketResearchPage.js'
+// Components
+import Login from "./login.js";
+import MarketResearch from './MarketResearchPage.js'
 
 
 export default function App() {
@@ -24,7 +26,10 @@ export default function App() {
 							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/example">Example</Link>
+							<Link to="/login">Login</Link>
+						</li>
+						<li>
+							<Link to="/market-research">Market Research</Link>
 						</li>
 					</ul>
 				</nav>
@@ -32,10 +37,16 @@ export default function App() {
 				<div className="content">
 					<Switch>
 						<Route exact path="/">
-							<MarketResearchPage />
+							<div>Homepage content</div>
 						</Route>
-						<Route path="/example">
-							<div>Example</div>
+						<Route path="/login">
+							<Login
+								notificationText="Welcome to FoodCheck! Please login"
+								error="Invalid credentials"
+							/>
+						</Route>
+						<Route path="/market-research">
+							<MarketResearchPage />
 						</Route>
 					</Switch>
 				</div>

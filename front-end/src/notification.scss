@@ -1,0 +1,17 @@
+@import 'colors';
+
+.Notification {
+	display: block;
+	background-color: $c-grey-light;
+	border: 2px solid $c-grey;
+	color: $c-grey-darkest;
+	font-size: 1em;
+	margin: 10px;
+	padding: 10px;
+
+	&--error {
+		background-color: $c-red-light;
+		border: 2px solid $c-red;
+		color: $c-red-darkest;
+	}
+}
