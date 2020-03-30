@@ -2,7 +2,7 @@ $border: 1px solid red;
 
 .InfoBox {
 	display: block;
-	padding: 10px;
+	padding: 15px;
 	margin: 0 auto;
 	border: $border;
 	border-top: none;
@@ -32,16 +32,16 @@ $border: 1px solid red;
 
 		&__number {
 			display: inline-block;
-			padding: 10px 5px;
+			margin-right: 10px;
 		}
 
 		&__name {
 			display: inline-block;
-			padding: 10px 5px;
 		}
 
 		&__address {
 			display: block;
+			margin-top: 15px;
 		}
 
 		&__review_count {
@@ -50,8 +50,8 @@ $border: 1px solid red;
 
 		&__icon {
 			display: inline-block;
-			padding: 10px 5px;
-			margin: 10px auto;
+			padding: 0 5px;
+			cursor: pointer;
 		}
 	}
 
@@ -62,5 +62,6 @@ $border: 1px solid red;
 		justify-content: flex-start;
 		align-items: center;
 		align-content: center;
+		margin-top: 15px;
 	}
 }
