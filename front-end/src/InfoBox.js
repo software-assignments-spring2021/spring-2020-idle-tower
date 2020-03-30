@@ -21,15 +21,14 @@ const InfoBox = (props) => {
 
 	return (
 		<div className="InfoBox">
-			<div className="InfoBox__primary" onClick={toggleSecondary}>
+			<div className="InfoBox__primary">
 				<div className="col">
 					<div className="InfoBox__primary__number">{ props.number }.</div>
 					<div className="InfoBox__primary__name">{ data['name'] }</div>
 					<div className="InfoBox__primary__address">{ data['address'] }</div>
 				</div>
 				<div className="col col--icons">
-					<div className="InfoBox__primary__icon">ICON</div>
-					<div className="InfoBox__primary__icon">ICON</div>
+					<div className="InfoBox__primary__icon" onClick={toggleSecondary}>Quick Insights</div>
 				</div>
 			</div>
 			
