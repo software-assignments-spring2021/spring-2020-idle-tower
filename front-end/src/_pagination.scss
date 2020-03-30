@@ -1,0 +1,22 @@
+@import "helpers";
+
+.pagination {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		padding: 10px;
+
+		a {
+			color: $c-blue-darkest;
+		}
+	}
+	.active a {
+		font-weight: bold;
+	}
+	.disabled a {
+		color: $c-blue-light;
+	}
+}

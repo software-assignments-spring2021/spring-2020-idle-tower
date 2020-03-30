@@ -14,8 +14,6 @@ const MarketResearch = (props) => {
 		fetch('https://my.api.mockaroo.com/business.json?key=71f47770')
 		.then(response => response.json())
 		.then(d => {
-			console.log(d);
-
 			// if (d['error']) {
 			// 	// handle mockaroo API error
 			// }

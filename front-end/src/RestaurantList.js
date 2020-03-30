@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Pagination from "react-js-pagination";
 import './RestaurantList.scss';
 
 import InfoBox from './InfoBox.js';
@@ -22,9 +23,37 @@ const RestaurantList = (props) => {
 		}
 	}, [data])
 
+	// Pagination
+	const [activePage, setActivePage] = useState(1);
+
+	function handlePageChange(pageNumber) {
+		setActivePage(pageNumber);
+	}
+	
+	const [pagination, setPagination] = useState(null);
+	const [visibleRows, setVisibleRows] = useState(rows.slice(0, 5));
+	const ITEMS_COUNT_PER_PAGE = 5
+	useEffect(() => {
+		const pagination = (
+			<Pagination
+				activePage={activePage}
+				itemsCountPerPage={ITEMS_COUNT_PER_PAGE}
+				totalItemsCount={rows.length}
+				pageRangeDisplayed={5}
+				onChange={handlePageChange.bind(this)}
+				hideFirstLastPages
+			/>
+		)
+		setPagination(pagination)
+		setVisibleRows(rows.slice(ITEMS_COUNT_PER_PAGE*(activePage-1), ITEMS_COUNT_PER_PAGE*(activePage-1)+5));
+	}, [rows, activePage])
+
+
 	return (
 		<div className="RestaurantList">
-			{rows.map(InfoBox => <div> {InfoBox} </div>)}
+			{ visibleRows.map(InfoBox => <div> {InfoBox} </div>) }
+			<br />
+			{ pagination }
 		</div>
 	)
 }
