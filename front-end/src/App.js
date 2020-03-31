@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // Components
 import Login from "./login.js";
+import ExploreNotSignedIn from "./explore-nsi.js"
 
 export default function App() {
   return (
@@ -22,6 +23,9 @@ export default function App() {
             <li>
               <Link to="/login">Login</Link>
             </li>
+            <li>
+              <Link to="/explore-nsi">Explore Not Signed In</Link>
+            </li>
           </ul>
         </nav>
 
@@ -34,6 +38,10 @@ export default function App() {
               notificationText="Welcome to FoodCheck! Please login"
               error="Invalid credentials"
             />
+          </Route>
+          <Route exact path="/explore-nsi">
+            <ExploreNotSignedIn></ExploreNotSignedIn>
+
           </Route>
         </Switch>
       </div>
