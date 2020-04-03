@@ -1,0 +1,106 @@
+@import "helpers";
+
+$border: 1px solid $c-grey;
+
+.InfoBox {
+	display: block;
+	margin: 0 auto;
+	border: $border;
+	border-top: none;
+	font-size: .9em;
+}
+// Add top-border back to first InfoBox
+.RestaurantList > :nth-child(1):nth-child(1) {
+	border-top: $border;
+}
+
+.InfoBox {
+	.col {
+		display: block;
+		flex-grow: 1;
+
+		&--right {
+			text-align: right;
+		}
+	}
+
+	&__primary {
+		// flexbox
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		// 
+		padding: 10px;
+
+		&__number {
+			display: inline-block;
+			margin-right: 10px;
+			font-size: 1.5em;
+		}
+
+		&__name {
+			display: inline-block;
+			font-size: 1.5em;
+		}
+
+		&__address {
+			display: block;
+			margin-top: 5px;
+			color: $c-grey-dark;
+		}
+
+		&__review_count {
+			display: block;
+		}
+
+		&__button {
+			@extend .button;
+			@extend .button--small;
+
+			span {
+				padding: 15px 30px 15px 30px;
+			}
+
+			&__title {
+				margin-bottom: 10px;
+			}
+
+			&__show-hide {
+				font-size: .75em;
+			}
+		}
+	}
+
+	&__secondary {
+		// flexbox
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: stretch;
+		align-items: center;
+		align-content: center;
+		// 
+
+		padding: 10px;
+		border-top: $border;
+
+		.col {
+			display: block;
+			flex-grow: 1;
+			text-align: center;
+		}
+
+		&__data {
+			display: block;
+			font-size: 1.5em;
+		}
+
+		&__title {
+			display: block;
+			font-size: .8em;
+		}
+	}
+}
