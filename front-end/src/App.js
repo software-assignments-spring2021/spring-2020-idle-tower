@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // Components
 import Login from "./login.js";
+import Signup from "./signup.js";
 
 export default function App() {
   return (
@@ -22,6 +23,9 @@ export default function App() {
             <li>
               <Link to="/login">Login</Link>
             </li>
+            <li>
+              <Link to = "/signup">Sign Up</Link>
+            </li>
           </ul>
         </nav>
 
@@ -35,6 +39,13 @@ export default function App() {
               error="Invalid credentials"
             />
           </Route>
+          <Route path = "/signup">
+            <Signup
+              notificationText="Please Sign Up"
+              error="Invalid credentials"
+            />
+          </Route>
+
         </Switch>
       </div>
     </Router>

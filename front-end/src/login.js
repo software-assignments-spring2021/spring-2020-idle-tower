@@ -7,7 +7,7 @@ const Login = props => {
   return (
     <div className="Login">
       <Notification text={props.notificationText} error={props.error} />
-
+      <h1>Testing</h1>
       <form action="" method="" acceptCharset="utf-8">
         <label>
           Username: <input type="text" name="username" />
