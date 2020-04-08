@@ -1,0 +1,47 @@
+.button {
+	display: block;
+	max-width: 100%;
+	position: relative;
+	margin: 0 auto;
+
+	a, input, span {
+		display: inline-block;
+		max-width: 100%;
+		text-decoration: none;
+		text-align: center;
+		padding: 15px 50px 15px 50px;
+		font-size: 1.5em;
+		color: $c-black;
+		background: $c-grey;
+		border: none;
+		cursor: pointer;
+		white-space: normal;
+
+		&:hover {
+			background: $c-grey-light;
+		}
+	}
+}
+
+.button--blue {
+	@extend .button;
+
+	a, input, span {
+		color: $c-white;
+		background: $c-blue;
+
+		&:hover {
+			background: $c-blue-dark;
+		}
+	}
+}
+
+
+// Button Utilities
+.button--center {
+	text-align: center;
+}
+
+.button--small {
+	font-size: .7em;
+}
