@@ -1,8 +1,7 @@
 import React from "react";
-import MarketResearch from "./MarketResearch"
+import SearchResults from "./SearchResults"
 import "./explore.scss";
 import {
-	BrowserRouter as Router,
 	Switch,
 	Route,
 	Link
@@ -24,8 +23,7 @@ const Explore = props => {
                     </form>
                 </div>
                 <div>                   
-                    <MarketResearch title="search results"/>
-
+                    <SearchResults />
                 </div>
             </div>
     
