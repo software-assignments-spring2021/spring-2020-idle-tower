@@ -8,7 +8,7 @@ const Signup = props => {
   return (
 	<div className="Signup">
 		<Notification text={props.notificationText} error={props.error} />
-		<h1>Signup</h1>
+		<h2>Signup</h2>
 		<form action="" method="" acceptCharset="utf-8">
 			<label>
 				Username: <input type="text" name="username" />
