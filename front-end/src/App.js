@@ -36,17 +36,13 @@ export default function App() {
 						<li>
 							<Link to="/market-research">Market Research</Link>
 						</li>
-						<li>
-							<Link to="/explore">Explore</Link>
-						</li>
-
 					</ul>
 				</nav>
 
 				<div className="content">
 					<Switch>
 						<Route exact path="/">
-							<div>Homepage content</div>
+							<Explore isLoggedIn={false}/>
 						</Route>
 						<Route path="/login">
 							<Login
@@ -61,11 +57,6 @@ export default function App() {
 						</Route>
 						<Route path="/market-research">
 							<MarketResearchPage />
-						</Route>
-
-						<Route path="/explore">
-							<Explore />
-							
 						</Route>
 					</Switch>
 				</div>
