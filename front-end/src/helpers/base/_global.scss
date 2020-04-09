@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 	word-wrap: break-word;
 }
 
 html {
+	font-family: 'Roboto', sans-serif;
 	color: $c-black;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
