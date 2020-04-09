@@ -21,7 +21,8 @@ const Signup = props => {
 			</label>
 			<input type="submit" name="submit" value="Submit" />
 		</form>
-		<h2>Already a memeber?</h2>
+		<br />
+		<p>Already a memeber?</p>
 		<Link to = "/login" id = "login_link">Login</Link>
 	</div>
 	
