@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./login.js";
 import Signup from "./signup.js";
 import MarketResearchPage from "./MarketResearchPage.js";
+import Explore from "./explore.js";
 import SideBar from "./sidebar.js";
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
           <div className="content">
             <Switch>
               <Route exact path="/">
-                <div>Homepage content</div>
+                <Explore />
               </Route>
               <Route path="/login">
                 <Login
