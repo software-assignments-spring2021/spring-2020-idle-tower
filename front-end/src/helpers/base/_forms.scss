@@ -1,0 +1,15 @@
+form {
+	width: 100%;
+	max-width: 100%;
+	margin: 10px auto;
+	font-size: 1em;
+}
+
+input {
+	font-size: 16px; // 16px so on mobile it works nicely
+}
+
+input[type=submit] {
+	
+	padding: 10px;
+}

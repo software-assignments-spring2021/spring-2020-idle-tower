@@ -1,9 +1,12 @@
+@import 'helpers/base/all';
+
 .container {
 	display: block;
-	font-size: 100%;
-	padding: 0 10px;
 	position: relative;
-	top: 70px;
+	margin-top: 90px;
+	font-size: 1em;
+	line-height: 1.5;
+	background-color: $c-white;
 }
 
 header {
