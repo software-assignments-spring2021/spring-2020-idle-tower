@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+} from "react-router-dom";
 import './InfoBox.scss';
+import Resturant_Dashboard from './Resturant_Dashboard.js';
 
 const InfoBox = (props) => {
 	const data = props.data;
@@ -36,7 +43,10 @@ const InfoBox = (props) => {
 			<div className="InfoBox__primary">
 				<div className="col">
 					<div className="InfoBox__primary__number">{ props.number }.</div>
-					<div className="InfoBox__primary__name">{ data['name'] }</div>
+					<div className="InfoBox__primary__name">
+						<Link to = {{pathname:"/Resturant_Dashboard" ,state:{resturant_name:data['name']}}}> {data ['name']} </Link>
+						
+					</div>
 					<div className="InfoBox__primary__address">{ data['address'] }</div>
 				</div>
 				<div className="col col--right">
@@ -50,7 +60,14 @@ const InfoBox = (props) => {
 			</div>
 			
 			{ secondaryOpen ? secondarySection : null }
+
+			{/* <Switch>
+				<Route path = "/Resturant_Dashboard" render = {(props) => <Resturant_Dashboard {...props} name = {data['name']}/>}/>
+
+			</Switch> */}
 		</div>
+
+		
 	)
 }
 

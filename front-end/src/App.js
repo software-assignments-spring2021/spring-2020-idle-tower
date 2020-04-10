@@ -12,6 +12,7 @@ import {
 import Login from "./login.js";
 import Signup from "./signup.js";
 import MarketResearchPage from './MarketResearchPage.js'
+import Resturant_Dashboard from './Resturant_Dashboard.js'
 
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
 						<li>
 							<Link to="/market-research">Market Research</Link>
 						</li>
+						
 					</ul>
 				</nav>
 
@@ -57,6 +59,10 @@ export default function App() {
 						<Route path="/market-research">
 							<MarketResearchPage />
 						</Route>
+						<Route path = "/Resturant_Dashboard">
+							<Resturant_Dashboard/>
+						</Route>
+						
 					</Switch>
 				</div>
 			</div>
