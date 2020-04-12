@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './InfoBox.scss';
+import './info-box.scss';
 
 const InfoBox = (props) => {
 	const data = props.data;

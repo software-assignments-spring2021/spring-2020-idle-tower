@@ -1,5 +1,5 @@
 import React from 'react';
-import MarketResearch from './MarketResearch.js';
+import MarketResearch from './market-research.js';
 
 
 const MarketResearchPage = (props) => {
