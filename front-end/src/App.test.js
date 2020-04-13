@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { render } from '@testing-library/react';
-import App from './App';
+import App from './app';
 
 let container;
 
