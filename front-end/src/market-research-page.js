@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import MarketResearch from './market-research.js';
-import { LoginContext } from './login-context.js'
+import { UserContext } from './user-context.js'
 
 
 const MarketResearchPage = (props) => {
-	const [loggedIn] = useContext(LoginContext);
+	const [userState] = useContext(UserContext);
 	const components = [];
-	if (loggedIn) {
+	if (userState['logged-in']) {
 		components.push(<MarketResearch title="Saved Restaurants" />);
 		components.push(<br />);
 	}

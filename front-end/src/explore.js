@@ -7,11 +7,12 @@ import {
 } from "react-router-dom";
 import Signup from "./signup.js";
 import SearchResults from "./search-results.js";
-import { LoginContext } from './login-context.js';
+import { UserContext } from './user-context.js';
 
 
 const Explore = (props) => {
-    const [loggedIn] = useContext(LoginContext);
+    const [userState] = useContext(UserContext);
+    const loggedIn = userState['logged-in'];
     
     if(loggedIn){
         return (

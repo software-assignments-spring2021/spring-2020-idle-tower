@@ -2,7 +2,7 @@ import React from "react";
 import "./lib/reset.css";
 import "./app.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { LoginProvider } from "./login-context.js";
+import { UserProvider } from "./user-context.js";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
@@ -12,7 +12,7 @@ import SideBar from "./sidebar.js";
 
 export default function App() {
   return (
-    <LoginProvider>
+    <UserProvider>
       <div id="App">
         <Router>
           <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
@@ -42,7 +42,7 @@ export default function App() {
           </div>
         </Router>
       </div>
-    </LoginProvider>
+    </UserProvider>
   );
 
 }
