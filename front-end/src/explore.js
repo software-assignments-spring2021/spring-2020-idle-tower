@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 import SearchResults from "./SearchResults.js"
+=======
+import SearchResults from "./SearchResults"
+>>>>>>> 0f9b6e78f292ca1bfe2483c1eb4a3b6509775f1b
 import "./explore.scss";
 import {
 	Switch,

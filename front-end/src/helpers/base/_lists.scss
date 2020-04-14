@@ -1,0 +1,17 @@
+ul {
+	li {
+		list-style-position: outside;
+		list-style-type: disc;
+		padding-bottom: 5px;
+		margin-left: 25px;
+	}
+}
+
+ol {
+	li {
+		list-style-position: outside;
+		list-style-type: decimal;
+		padding-bottom: 5px;
+		margin-left: 25px;
+	}
+}

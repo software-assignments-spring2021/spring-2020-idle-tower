@@ -21,7 +21,7 @@ const InfoBox = (props) => {
 				<div className="InfoBox__secondary__title">price</div>
 			</div>
 			<div className="col">
-				<div className="InfoBox__secondary__data">{ data['foodcheck_score'] }</div>
+				<div className="InfoBox__secondary__data InfoBox__secondary__data--foodcheck-score">{ data['foodcheck_score'] }</div>
 				<div className="InfoBox__secondary__title">food check score</div>
 			</div>
 			<div className="col">
