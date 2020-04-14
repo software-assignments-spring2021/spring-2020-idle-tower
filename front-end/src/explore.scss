@@ -15,5 +15,17 @@
 
 }
 #sign-up-button{
-    height: 20px;
+    height: 40px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#button-div{
+    display: block;
 }

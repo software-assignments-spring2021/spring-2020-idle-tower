@@ -41,7 +41,7 @@ const Explore = props => {
 
             </div>
             <div id="ExploreFeatures">
-                Features in FoodCheck
+                <h2>Features in FoodCheck</h2>
                 <ul>
                     <li>personalized dahsboard on restaurant insights</li>
                     <li>detailed analysis on competitors</li>
@@ -49,15 +49,15 @@ const Explore = props => {
                 </ul>
             </div>
             <div id="ExploreSignUp">
-                Sign up for food check
-                {/* <button id="sign-up-button"> */}
-                    {/* Sign up now */}
-                    <Link to = "./signup"><button>sign up</button></Link>
+                <h2>Sign up for food check!</h2>
+                <h1> </h1>
+                <div id="button-div"><Link to = "./signup"><button id="sign-up-button">sign up</button></Link>
                     <Switch> 
                         <Route path = "/signup">
                             <Signup notificationText = "Welcome to FoodCheck! Please Sign Up!"/>
                         </Route>
-                    </Switch>
+                    </Switch></div>
+                    
                 {/* </button> */}
             </div>
         </div>
