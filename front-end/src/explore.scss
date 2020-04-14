@@ -7,7 +7,10 @@
 
 #Explore-NSI-hero, #ExploreFeatures, #ExploreSignUp{
     height: 400px;
-    text-align: center;    
+    text-align: center;  
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 #sign-up-button{
     height: 20px;

@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResults from "./SearchResults"
+import SearchResults from "./SearchResults.js"
 import "./explore.scss";
 import {
 	Switch,
