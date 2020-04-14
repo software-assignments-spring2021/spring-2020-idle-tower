@@ -6,7 +6,8 @@ import { LoginProvider } from "./login-context.js";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
-import MarketResearchPage from "./market-research-page.js";
+import MarketResearchPage from './market-research-page.js'
+import Explore from "./explore.js"
 import SideBar from "./sidebar.js";
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
             <div className="content">
               <Switch>
                 <Route exact path="/">
-                  <div>Homepage content</div>
+                  <Explore isLoggedIn={false}/>
                 </Route>
                 <Route path="/login">
                   <Login
@@ -43,4 +44,5 @@ export default function App() {
       </div>
     </LoginProvider>
   );
+
 }
