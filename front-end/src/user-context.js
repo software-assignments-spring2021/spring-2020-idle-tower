@@ -2,28 +2,31 @@ import React, { useState, useEffect } from "react";
 
 
 
-const LoginContext = React.createContext([false, () => {}]);
+const UserContext = React.createContext([false, () => {}]);
 
-const LoginProvider = (props) => {
-	const [loggedIn, setLoggedIn] = useState(false);
+const UserProvider = (props) => {
+	const [state, setState] = useState({});
 
 	// Get mock data
 	useEffect(() => {
 		fetch('https://my.api.mockaroo.com/login.json?key=71f47770')
 		.then(response => response.json())
 		.then(d => {
-			setLoggedIn(d['valid']);
+			const newState = {
+				'logged-in': d['valid'],
+			}
+			setState(newState);
 		});
 	}, [])
 
 	return (
-		<LoginContext.Provider value={[loggedIn, setLoggedIn]}>
+		<UserContext.Provider value={[state, setState]}>
 			{props.children}
-		</LoginContext.Provider>
+		</UserContext.Provider>
 	);
 }
 
-export { LoginContext, LoginProvider };
+export { UserContext, UserProvider };
 
 
 
