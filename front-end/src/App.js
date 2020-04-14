@@ -1,13 +1,13 @@
 import React from "react";
 import "./lib/reset.css";
-import "./app.scss";
+import "./App.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
 import MarketResearchPage from './market-research-page.js'
 import Explore from "./explore.js"
-
+import SideBar from "./sidebar.js";
 
 export default function App() {
 	return (
