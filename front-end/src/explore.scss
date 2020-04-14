@@ -1,0 +1,31 @@
+#explore-hero form {
+    text-align: center;
+    height: 300px;
+    
+    
+}
+
+#Explore-NSI-hero, #ExploreFeatures, #ExploreSignUp{
+    height: 400px;
+    text-align: center;  
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-align: center;    
+
+}
+#sign-up-button{
+    height: 40px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#button-div{
+    display: block;
+}
