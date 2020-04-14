@@ -1,20 +1,20 @@
-import React from "react";
-
-import SearchResults from "./SearchResults.js"
-// import SearchResults from "./SearchResults"
+import React, { useContext } from 'react';
 import "./explore.scss";
 import {
 	Switch,
 	Route,
 	Link
 } from "react-router-dom";
+import Signup from "./signup.js";
+import SearchResults from "./search-results.js";
+import { UserContext } from './user-context.js';
 
-import Signup from "./signup.js"
 
-const Explore = props => {
-    let{isLoggedIn} = props;
+const Explore = (props) => {
+    const [userState] = useContext(UserContext);
+    const loggedIn = userState['logged-in'];
     
-    if(isLoggedIn){
+    if(loggedIn){
         return (
             <div className="ExploreSignedIn">
                 <div id="explore-hero">
