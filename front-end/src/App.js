@@ -1,11 +1,11 @@
 import React from "react";
 import "./lib/reset.css";
-import "./App.scss";
+import "./app.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
-import MarketResearchPage from "./MarketResearchPage.js";
+import MarketResearchPage from "./market-research-page.js";
 import Explore from "./explore.js";
 import SideBar from "./sidebar.js";
 
