@@ -20,7 +20,7 @@ export default function App() {
             <div className="content">
               <Switch>
                 <Route exact path="/">
-                  <Explore isLoggedIn={false}/>
+                  <Explore />
                 </Route>
                 <Route path="/login">
                   <Login
