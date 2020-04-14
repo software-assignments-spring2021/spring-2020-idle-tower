@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SearchResults.scss';
 
-import RestaurantList from './RestaurantList.js';
+import RestaurantList from './restaurant-list.js';
 
 
 const SearchResults = (props) => {
