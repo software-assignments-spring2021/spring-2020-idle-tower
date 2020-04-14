@@ -1,10 +1,11 @@
 import React from "react";
 import "./lib/reset.css";
-import "./App.scss";
+import "./app.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
+<<<<<<< HEAD
 <<<<<<< HEAD
 import MarketResearchPage from './MarketResearchPage.js'
 import Explore from "./explore.js"
@@ -60,6 +61,9 @@ export default function App() {
 	);
 =======
 import MarketResearchPage from "./MarketResearchPage.js";
+=======
+import MarketResearchPage from "./market-research-page.js";
+>>>>>>> 9bf72edc40f4dd2c950241c123d088d67793ccdf
 import Explore from "./explore.js";
 import SideBar from "./sidebar.js";
 
