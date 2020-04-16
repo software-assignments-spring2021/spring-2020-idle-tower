@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
-import MarketResearchPage from './market-research-page.js'
-import Explore from "./explore.js"
+import MarketResearchPage from "./market-research-page.js";
+import Explore from "./explore.js";
 import SideBar from "./sidebar.js";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
           <div className="content">
             <Switch>
               <Route exact path="/">
-                <Explore isLoggedIn={false}/>
+                <Explore isLoggedIn={true} />
               </Route>
               <Route path="/login">
                 <Login
@@ -41,5 +41,4 @@ export default function App() {
       </Router>
     </div>
   );
-
 }
