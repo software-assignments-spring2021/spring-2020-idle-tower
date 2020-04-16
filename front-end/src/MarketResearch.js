@@ -25,6 +25,7 @@ const MarketResearch = (props) => {
 	return (
 		<div className="MarketResearch">
 			<div className="MarketResearch__title">{props.title}</div>
+		
 			<RestaurantList response={data} key="saved" />
 		</div>
 	)

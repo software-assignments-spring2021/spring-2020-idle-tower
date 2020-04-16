@@ -7,10 +7,10 @@ import {
 	useParams
 } from "react-router-dom";
 import './InfoBox.scss';
-import Restaurant_Dashboard from './Restaurant_Dashboard.js';
 
 const InfoBox = (props) => {
 	const data = props.data;
+	const key = props.key;
 
 	const [secondaryOpen, setSecondaryOpen] = useState(false);
 
@@ -38,7 +38,6 @@ const InfoBox = (props) => {
 			</div>
 		</div>
 	);
-	//const rest_info = {name:data['name'], score:data['foodcheck_score']};
 	return (
 
 		<div className="InfoBox">
@@ -49,7 +48,7 @@ const InfoBox = (props) => {
 					<div className="InfoBox__primary__name">
 						<Link to={{ 
 							pathname: "/Restaurant_Dashboard", 
-							state: {name: data['name']}
+							state: {name: data['name'], id:key}
 							}}>	{data['name']} </Link>
 						
 					</div>

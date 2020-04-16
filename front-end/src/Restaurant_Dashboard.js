@@ -1,26 +1,42 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+//import React, { Component } from "react";
+import React, { useState, useEffect } from 'react';
+
 import "./Restaurant_Dashboard.scss";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //** NOTE: need to ADD React state when backend is done **/
 // This is just a layout of what the resturant page will look like
-/*
+
  const Restaurant_Dashboard = (props) =>{
-    //js goes here 
-    console.log("This is working", props.location.state.name)
-    // Goal: print the resturant name from marketreaserch
+    console.log("This is working. Name + Key: ", props.location.state.name,"+", props.location.state.id)
+
+    /* Get data */
+	// Init state
+	const [data, setData] = useState(0);
+	
+	// Get mock data
+	useEffect(() => {
+		fetch('https://my.api.mockaroo.com/business.json?key=71f47770')
+		.then(response => response.json())
+		.then(d => {
+			// if (d['error']) {
+			// 	// handle mockaroo API error
+			// }
+			
+			setData(d);
+		});
+	}, [])
+
     return ( 
 
        <div className = "Restaruant_Dashboard">
-           <h1> It does not work {props.location.state.name} </h1>
+           <h1> Welcome to your dashboard {props.location.state.name}!  </h1>
        </div>        
         
     );
 };  
-*/
 
-  class Restaurant_Dashboard extends React.Component {
+
+ /*  class Restaurant_Dashboard extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -29,14 +45,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
         
         return (
         <div>
-            <h1> This is my testing dashboard!! {this.props.location.state.name}</h1>
+            <h1> Welcome to your dashboard {this.props.location.state.name}!</h1>
         
         </div>
         );
     }
 };
 
-//ReactDOM.render(<Restruant_Dashboard />, document.getElementById("root")); 
+//ReactDOM.render(<Restruant_Dashboard />, document.getElementById("root"));  */
 
 
 export default Restaurant_Dashboard;
