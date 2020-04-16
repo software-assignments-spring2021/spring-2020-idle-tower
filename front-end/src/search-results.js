@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SearchResults.scss';
+import './search-results.scss';
 
 import RestaurantList from './restaurant-list.js';
 
