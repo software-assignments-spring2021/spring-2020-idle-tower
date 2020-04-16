@@ -12,7 +12,7 @@ import {
 import Login from "./login.js";
 import Signup from "./signup.js";
 import MarketResearchPage from './MarketResearchPage.js'
-import Resturant_Dashboard from './Resturant_Dashboard.js'
+import Resturant_Dashboard from './Restaurant_Dashboard.js'
 
 
 export default function App() {
@@ -59,7 +59,7 @@ export default function App() {
 						<Route path="/market-research">
 							<MarketResearchPage />
 						</Route>
-						<Route path = "/Resturant_Dashboard">
+						<Route path = "/Restaurant_Dashboard">
 							<Resturant_Dashboard/>
 						</Route>
 						
