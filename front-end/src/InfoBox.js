@@ -3,7 +3,8 @@ import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	Link
+	Link,
+	useParams
 } from "react-router-dom";
 import './InfoBox.scss';
 import Restaurant_Dashboard from './Restaurant_Dashboard.js';
@@ -46,12 +47,11 @@ const InfoBox = (props) => {
 				<div className="col">
 					<div className="InfoBox__primary__number">{props.number}.</div>
 					<div className="InfoBox__primary__name">
-
 						<Link to={{ 
-							pathname: "/Restaurant_Dashboard/", 
-							state:  {name: "Ednibd"},
+							pathname: "/Restaurant_Dashboard", 
+							state: {name: data['name']}
 							}}>	{data['name']} </Link>
-						<Route path="/Restaurant_Dashboard">asdf</Route>
+						
 					</div>
 					<div className="InfoBox__primary__address">{data['address']}</div>
 				</div>

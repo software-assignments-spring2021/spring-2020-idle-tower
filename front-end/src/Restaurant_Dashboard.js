@@ -5,23 +5,22 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //** NOTE: need to ADD React state when backend is done **/
 // This is just a layout of what the resturant page will look like
+/*
+ const Restaurant_Dashboard = (props) =>{
+    //js goes here 
+    console.log("This is working", props.location.state.name)
+    // Goal: print the resturant name from marketreaserch
+    return ( 
 
-//  const Restaruant_Dashboard = props =>{
-//     //js goes here 
-//     console.log("This is working")
-//     // Goal: print the resturant name from marketreaserch
-//     return ( 
-
-//        <div className = "Resturant_Dashboard">
-//            <h1> It works. {this.props.name}</h1>
-//        </div>
+       <div className = "Restaruant_Dashboard">
+           <h1> It does not work {props.location.state.name} </h1>
+       </div>        
         
-        
-//     );
-    
-// };  
+    );
+};  
+*/
 
-  class Restaruant_Dashboard extends React.Component {
+  class Restaurant_Dashboard extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -30,7 +29,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
         
         return (
         <div>
-            <h1> This is my testing dashboard! {this.props.location}</h1>
+            <h1> This is my testing dashboard!! {this.props.location.state.name}</h1>
         
         </div>
         );
@@ -40,4 +39,4 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //ReactDOM.render(<Restruant_Dashboard />, document.getElementById("root")); 
 
 
-export default Restaruant_Dashboard;
+export default Restaurant_Dashboard;
