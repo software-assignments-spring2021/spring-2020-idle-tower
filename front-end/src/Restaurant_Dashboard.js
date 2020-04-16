@@ -29,7 +29,7 @@ import "./Restaurant_Dashboard.scss";
     return ( 
 
        <div className = "Restaruant_Dashboard">
-           <h1> Welcome to your dashboard {props.location.state.name}!  </h1>
+           <h1> Welcome to your dashboard {props.location.state.name} id key {props.location.state.id}!  </h1>
        </div>        
         
     );

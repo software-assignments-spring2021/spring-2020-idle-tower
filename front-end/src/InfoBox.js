@@ -10,7 +10,7 @@ import './InfoBox.scss';
 
 const InfoBox = (props) => {
 	const data = props.data;
-	const key = props.key;
+	console.log(data)
 
 	const [secondaryOpen, setSecondaryOpen] = useState(false);
 
@@ -48,7 +48,7 @@ const InfoBox = (props) => {
 					<div className="InfoBox__primary__name">
 						<Link to={{ 
 							pathname: "/Restaurant_Dashboard", 
-							state: {name: data['name'], id:key}
+							state: {name: data['name'], id: data["business_id"]}
 							}}>	{data['name']} </Link>
 						
 					</div>
