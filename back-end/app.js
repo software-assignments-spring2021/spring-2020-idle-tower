@@ -9,7 +9,11 @@ const axios = require("axios"); // making request to API
 const morgan = require("morgan"); // logging HTTP requests
 
 app.use(morgan("dev"));
-app.get("", (req, res) => {
-  res.send("test");
-});
 
+
+// Routes
+const indexRoutes = require('./routes/index')
+app.use('/', indexRoutes);
+
+
+module.exports = app;
