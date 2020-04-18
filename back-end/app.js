@@ -13,7 +13,9 @@ app.use(morgan("dev"));
 
 // Routes
 const indexRoutes = require('./routes/index')
-app.use('/', indexRoutes);
+const userRoutes = require('./routes/user')
 
+app.use('/', indexRoutes);
+app.use('/user', userRoutes);
 
 module.exports = app;
