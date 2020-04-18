@@ -2,18 +2,21 @@
 import React, { useState, useEffect } from 'react';
 
 import "./Restaurant_Dashboard.scss";
+import Quick_Facts_RD from "./Quick_Facts_RD.js";
 
-//** NOTE: need to ADD React state when backend is done **/
 // This is just a layout of what the resturant page will look like
+// And fetching the data here 
 
  const Restaurant_Dashboard = (props) =>{
-    console.log("This is working. Name + Key: ", props.location.state.name,"+", props.location.state.id)
 
-    /* Get data */
-	// Init state
-	const [data, setData] = useState(0);
-	
-	// Get mock data
+    var business_data = props.location.state.business_data;
+
+   
+   
+
+    //if retriving directly from database 	
+/* 	// Get mock data
+    const [data, setData] = useState(0);
 	useEffect(() => {
 		fetch('https://my.api.mockaroo.com/business.json?key=71f47770')
 		.then(response => response.json())
@@ -26,33 +29,36 @@ import "./Restaurant_Dashboard.scss";
 		});
 	}, [])
 
+    // Find the business in database 
+    var ctr; 
+    var curr_business;
+    var data_business;
+    for (ctr = 0; ctr < data.length;ctr++){
+        curr_business = data[ctr];
+        console.log(curr_business['business_id'], "   ", curr_id)
+        if (curr_business["business_id"] == curr_id){
+            data_business = curr_business;
+            console.log("FOUND IT ", data_business)
+
+            break;
+        }
+        
+    } */
+ 
+
     return ( 
 
        <div className = "Restaruant_Dashboard">
-           <h1> Welcome to your dashboard {props.location.state.name} id key {props.location.state.id}!  </h1>
+           <h1> Welcome to your dashboard {business_data["name"]}!  </h1>
+           <Quick_Facts_RD response = {business_data} key = "saved"/>
+           <h1></h1> 
+           
        </div>        
         
     );
 };  
 
 
- /*  class Restaurant_Dashboard extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render(){
-        
-        return (
-        <div>
-            <h1> Welcome to your dashboard {this.props.location.state.name}!</h1>
-        
-        </div>
-        );
-    }
-};
-
-//ReactDOM.render(<Restruant_Dashboard />, document.getElementById("root"));  */
-
+ 
 
 export default Restaurant_Dashboard;
