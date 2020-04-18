@@ -2,6 +2,7 @@ import React from "react";
 import "./lib/reset.css";
 import "./app.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { UserProvider } from "./user-context.js";
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
@@ -11,35 +12,37 @@ import SideBar from "./sidebar.js";
 
 export default function App() {
   return (
-    <div id="App">
-      <Router>
-        <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
-        <div className="container">
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Explore isLoggedIn={false}/>
-              </Route>
-              <Route path="/login">
-                <Login
-                  notificationText="Welcome to FoodCheck! Please login"
-                  error="Invalid credentials"
-                />
-              </Route>
-              <Route path="/signup">
-                <Signup
-                  notificationText="Please Sign Up"
-                  error="Invalid Credentials"
-                />
-              </Route>
-              <Route path="/market-research">
-                <MarketResearchPage />
-              </Route>
-            </Switch>
+    <UserProvider>
+      <div id="App">
+        <Router>
+          <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+          <div className="container">
+            <div className="content">
+              <Switch>
+                <Route exact path="/">
+                  <Explore isLoggedIn={false}/>
+                </Route>
+                <Route path="/login">
+                  <Login
+                    notificationText="Welcome to FoodCheck! Please login"
+                    error="Invalid credentials"
+                  />
+                </Route>
+                <Route path="/signup">
+                  <Signup
+                    notificationText="Please Sign Up"
+                    error="Invalid Credentials"
+                  />
+                </Route>
+                <Route path="/market-research">
+                  <MarketResearchPage />
+                </Route>
+              </Switch>
+            </div>
           </div>
-        </div>
-      </Router>
-    </div>
+        </Router>
+      </div>
+     </UserProvider>
   );
 
 }
