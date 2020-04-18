@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import "./Quick_Facts.scss";
 
 const Quick_Facts_RD = (props) =>{
     //process the data 

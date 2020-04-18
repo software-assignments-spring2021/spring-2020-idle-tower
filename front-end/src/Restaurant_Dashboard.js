@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 
 import "./Restaurant_Dashboard.scss";
 import Quick_Facts_RD from "./Quick_Facts_RD.js";
+import Header_RD from "./Header_RD.js";
 
 // This is just a layout of what the resturant page will look like
-// And fetching the data here 
+
 
  const Restaurant_Dashboard = (props) =>{
 
@@ -49,9 +50,8 @@ import Quick_Facts_RD from "./Quick_Facts_RD.js";
     return ( 
 
        <div className = "Restaruant_Dashboard">
-           <h1> Welcome to your dashboard {business_data["name"]}!  </h1>
+           <Header_RD response = {business_data} key = "saved"/>
            <Quick_Facts_RD response = {business_data} key = "saved"/>
-           <h1></h1> 
            
        </div>        
         
