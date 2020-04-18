@@ -9,6 +9,7 @@ const axios = require("axios"); // making request to API
 const morgan = require("morgan"); // logging HTTP requests
 
 app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
 
 
 // Routes
