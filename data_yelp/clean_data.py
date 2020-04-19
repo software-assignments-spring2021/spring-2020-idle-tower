@@ -26,6 +26,9 @@ print ("Number of empty categories", empty_categories_count)
 
 
 #parse data based on tags
-TF_business_df = business_df.categories.str.contains("Restaurants").to_frame().dropna()
+TF_business_df = business_df.categories.str.contains("Restaurants").dropna()
 print (TF_business_df)
+print(TF_business_df.unique())
 
+#verification that removed all the None
+print (business_df.shape[0] == TF_business_df.shape[0] + empty_categories_count)
