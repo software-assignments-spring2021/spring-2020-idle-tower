@@ -28,11 +28,16 @@ const Review_cards_RD = (props) =>{
     <div class = "review">
       <h1 id = "type_review"> {props.type_review} Reviews </h1>
       <Carousel id = "carousel_review" responsive={responsive}>
-      <div class = "card_review">Review 1 </div>
-      <div class = "card_review"> Review 2</div>
-      <div class = "card_review"> Review 3</div>
-      <div class = "card_review">Review 4</div>
-      <div class = "card_review">Review 5</div>
+      <div class = "card_review"><div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      atmostphere. Highly reccomend!</div>
+      <div class = "card_review"> <div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      atmostphere. Highly reccomend!</div>
+      <div class = "card_review"> <div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      atmostphere. Highly reccomend!</div>
+      <div class = "card_review"><div class = "review_title"> Review Title</div>The place was horrible! I saw rats and they
+      didnt even wash their hands when preparing food. Disgusting! Do not reccomend. </div>
+      <div class = "card_review"><div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      atmostphere. Highly reccomend!</div>
       </Carousel>
     </div>
 
