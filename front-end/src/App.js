@@ -1,6 +1,6 @@
 import React from 'react';
 import './lib/reset.css';
-import './App.scss';
+import './app.scss';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -11,8 +11,8 @@ import {
 // Components
 import Login from "./login.js";
 import Signup from "./signup.js";
-import MarketResearchPage from './MarketResearchPage.js'
-import Restaurant_Dashboard from './Restaurant_Dashboard.js'
+import MarketResearchPage from './market-researchPage.js'
+import Restaurant_Dashboard from './restaurant-dashboard.js'
 
 
 export default function App() {

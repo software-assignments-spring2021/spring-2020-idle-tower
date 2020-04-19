@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from "react-js-pagination";
-import './RestaurantList.scss';
+import './restaurant-list.scss';
 
 import InfoBox from './InfoBox.js';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './MarketResearch.scss';
+import './market-research.scss';
 
-import RestaurantList from './RestaurantList.js';
+import RestaurantList from './restaurant-list.js';
 
 
 const MarketResearch = (props) => {

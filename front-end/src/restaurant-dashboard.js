@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./Restaurant_Dashboard.scss";
+import "./restaurant-dashboard.scss";
 //all the components on the dashboard page
 import Quick_Facts_RD from "./Quick_Facts_RD.js";
 import Header_RD from "./Header_RD.js";
