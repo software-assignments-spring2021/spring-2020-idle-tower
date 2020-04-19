@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pagination from "react-js-pagination";
 import './restaurant-list.scss';
 
-import InfoBox from './InfoBox.js';
+import InfoBox from './info-box.js';
 
 const RestaurantList = (props) => {
 	const data = props.response;

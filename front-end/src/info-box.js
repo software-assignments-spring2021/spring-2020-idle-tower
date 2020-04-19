@@ -6,7 +6,7 @@ import {
 	Link,
 	useParams
 } from "react-router-dom";
-import './InfoBox.scss';
+import './info-box.scss';
 
 const InfoBox = (props) => {
 	const data = props.data;
