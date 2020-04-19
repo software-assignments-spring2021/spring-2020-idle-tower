@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.scss';
 
-import Notification from './notification.js';
+import Notification from './notification';
 
 const Login = (props) => (
   <div className="Login">
