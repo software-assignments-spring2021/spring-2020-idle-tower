@@ -6,7 +6,7 @@ const Notification = props => {
     <div>
       <div className="Notification">{props.text}</div>
       {(() => {
-        if (props.error) {
+        if (props.error !== "") {
           return (
             <div className="Notification Notification--error">
               {props.error}

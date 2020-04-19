@@ -4,7 +4,7 @@ import "./app.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { UserProvider } from "./user-context.js";
 // Components
-import Login from "./login.js";
+import Login from "./login";
 import Signup from "./signup.js";
 import MarketResearchPage from './market-research-page.js'
 import Explore from "./explore.js"
