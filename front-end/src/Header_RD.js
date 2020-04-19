@@ -4,13 +4,15 @@ import "./Header_RD.scss";
 const Header_RD  =  (props) =>{
     const data = props.response; 
     return(
-        <div class = "header_dashboard">
-            <div id = "name">
+        <div id = "header_dashboard">
+            <div id = "resturant_name">
                 {data["name"]}
             </div>
             <div id = "fc_score" >
-                <h2>Food Check Score</h2>
-                {data["foodcheck_score"]}
+                <div id = "title_fc_score">Food Check Score</div>
+                <div id = "ratio_fc_score">
+                    <div id = "number_fc_score">{data["foodcheck_score"]}</div>/100
+                </div>
             </div>
 
         </div>

@@ -5,5 +5,77 @@
 	max-width: 600px;
     margin: 0 auto;
     
-    
+
 }
+
+#header_dashboard{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin:20px;
+
+}
+
+#resturant_name{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 45px;
+    border: 2px solid black;
+    margin: 3%;
+
+}
+
+#fc_score{
+    display: flex;
+    
+    margin-left:auto;
+    margin-right:auto;
+    width: 50%;
+    height: 35%;
+    border: 2px solid black;
+
+}
+
+#title_fc_score{
+    align-self: flex-start;
+    font-size: 15px;
+    margin:5px;
+    
+
+}
+
+#ratio_fc_score{
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 35%;
+    padding-top: 25%;
+    padding-bottom: 15%;
+    font-size: 150%;
+    display:inline-flex;
+    position: relative;
+    left:5%;
+
+
+
+}
+
+
+#number_fc_score{
+    font-size: 200%;
+    font-weight: bold;
+    position:relative;
+    bottom: 40%;
+    
+
+}
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Quick_Facts_RD = (props) =>{
     //process the data 
@@ -9,7 +9,6 @@ const Quick_Facts_RD = (props) =>{
 
     return (
         <div> 
-            <h2> Quick Facts: Amentities, Price, Reviews</h2>
             <div className="InfoBox__secondary">
 			<div className="col">
 				<div className="InfoBox__secondary__data">{data['amenities_count']}</div>

@@ -1,17 +1,18 @@
-//import React, { Component } from "react";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import "./Restaurant_Dashboard.scss";
+//all the components on the dashboard page
 import Quick_Facts_RD from "./Quick_Facts_RD.js";
 import Header_RD from "./Header_RD.js";
+import Review_cards_RD from "./Review_cards_RD.js";
 
-// This is just a layout of what the resturant page will look like
+// This is just a layout of what the resturant page 
 
 
  const Restaurant_Dashboard = (props) =>{
 
     var business_data = props.location.state.business_data;
-
+    
    
    
 
@@ -50,8 +51,11 @@ import Header_RD from "./Header_RD.js";
     return ( 
 
        <div className = "Restaruant_Dashboard">
-           <Header_RD response = {business_data} key = "saved"/>
-           <Quick_Facts_RD response = {business_data} key = "saved"/>
+           <Header_RD response = {business_data} />
+           <Quick_Facts_RD response = {business_data} />
+           <Review_cards_RD response = {business_data} type_review = "Positive"/>
+           <Review_cards_RD response = {business_data} type_review = "Negative"/>
+
            
        </div>        
         
