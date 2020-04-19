@@ -26,6 +26,6 @@ print ("Number of empty categories", empty_categories_count)
 
 
 #parse data based on tags
-TF_business_df = business_df.categories.str.contains("Restaurants") == True
+TF_business_df = business_df.categories.str.contains("Restaurants").to_frame().dropna()
 print (TF_business_df)
 
