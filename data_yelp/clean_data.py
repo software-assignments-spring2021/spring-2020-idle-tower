@@ -24,9 +24,10 @@ for index, item in enumerate(business_df.categories):
     
 print ("Number of empty categories", empty_categories_count)   
 
+#get rid of all rows empty --> avoid diff in row error
 na_business_df = business_df.dropna(subset = ["categories"])
 
-#parse data based on tags
+# produce T/F series of rows that contain resturant + drops "None" rows 
 TF_business_df = business_df.categories.str.contains("Restaurants").dropna()
 print (TF_business_df)
 print(TF_business_df.unique())
@@ -34,4 +35,5 @@ print(TF_business_df.unique())
 #verification that removed all the None
 print (business_df.shape[0] == TF_business_df.shape[0] + empty_categories_count)
 
+# produces final filtered data of resturants
 filtered_business_df = na_business_df[TF_business_df]
