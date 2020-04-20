@@ -7,6 +7,7 @@ import { UserProvider } from "./user-context.js";
 import Login from "./login";
 import Signup from "./signup.js";
 import MarketResearchPage from './market-research-page.js'
+import Restaurant_Dashboard from './restaurant-dashboard.js'
 import Explore from "./explore.js"
 import SideBar from "./sidebar.js";
 
@@ -37,6 +38,7 @@ export default function App() {
                 <Route path="/market-research">
                   <MarketResearchPage />
                 </Route>
+                <Route path = "/Restaurant_Dashboard/" component={Restaurant_Dashboard}></Route>
               </Switch>
             </div>
           </div>
