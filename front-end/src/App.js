@@ -1,12 +1,7 @@
 import React from 'react';
 import './lib/reset.css';
 import './app.scss';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 // Components
 import Login from "./login.js";
