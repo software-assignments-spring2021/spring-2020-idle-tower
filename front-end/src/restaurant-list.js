@@ -18,10 +18,13 @@ const RestaurantList = (props) => {
 					key={obj.business_id}
 					data={obj}
 					number={tempRows.length+1} />)
+				
 			}
 			setRows(tempRows)
 		}
 	}, [data])
+
+
 
 	// Pagination
 	const [activePage, setActivePage] = useState(1);
