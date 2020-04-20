@@ -37,3 +37,16 @@ print (business_df.shape[0] == TF_business_df.shape[0] + empty_categories_count)
 
 # produces final filtered data of resturants
 filtered_business_df = na_business_df[TF_business_df]
+
+
+# create a list of business id's from filtered business data 
+resturant_id_list = filtered_business_df.business_id.tolist()
+
+# split up to make answer key for training, test and development sets
+resturant_id_1 = resturant_id_list[0]
+rest_1_df = review_df[review_df["business_id"].str.match(resturant_id_1)]
+
+resturant_id_2 = resturant_id_list[3]
+rest_2_df = review_df[review_df["business_id"].str.match(resturant_id_2)]
+rest_3_df = review_df[review_df["business_id"].str.match(resturant_id_list[352])].append(review_df[review_df["business_id"].str.match(resturant_id_list[778])].iloc[:100])
+rest_4_df = review_df[review_df["business_id"].str.match(resturant_id_list[784])].append(review_df[review_df["business_id"].str.match(resturant_id_list[84])].iloc[:50]).append(review_df[review_df["business_id"].str.match(resturant_id_list[569])]).append(review_df[review_df["business_id"].str.match(resturant_id_list[69])])
