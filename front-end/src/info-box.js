@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './info-box.scss';
+import { BACKEND_URL } from './_constants';
+import { postData } from './_helpers';
 
 const InfoBox = (props) => {
 	const data = props.data;
