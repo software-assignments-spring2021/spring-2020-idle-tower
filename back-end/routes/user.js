@@ -15,7 +15,8 @@ function sendData(res, restaurantId, error) {
 
 // POST /save-restaurant
 router.post('/save-restaurant', (req, res) => {
-  const { restaurantId } = req.body;
+  const restaurantId = req.body['restaurant_id'];
+  console.log(restaurantId);
 
   // TODO: save restaurantId to user's saved_restaurants list
   // req.user.markModified('saved_restaurants');
@@ -28,10 +29,10 @@ router.post('/save-restaurant', (req, res) => {
   })
     .then((response) => {
       const err = response.data.error;
-      sendData(response, restaurantId, err);
+      sendData(res, restaurantId, err);
     })
     .catch((error) => {
-      console.log(error);
+      console.log("error: ", error);
     });
 });
 
