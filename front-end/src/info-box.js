@@ -7,6 +7,8 @@ import { postData } from './_helpers';
 const InfoBox = (props) => {
 	const data = props.data;
 
+	// Secondary section
+	// -----------------
 	const [secondaryOpen, setSecondaryOpen] = useState(false);
 
 	const toggleSecondary = () => {
