@@ -39,10 +39,46 @@ const InfoBox = (props) => {
 			</div>
 		</div>
 	);
+
+
+	// Save/delete restaurant to account
+	// ---------------------------------
+	const [restSavedStatus, setRestSavedStatus] = useState(false);
+
+	// set initial restSavedStatus value
+	// runs on component mount
+	useEffect(() => {
+		postData(BACKEND_URL + '/saved-restaurant-status', { "business_id": data["business_id"] })
+			.then((resData) => {
+				setRestSavedStatus(resData.saved);
+			});
+	}, [data])
+
+	const saveRest = () => {
+		postData(BACKEND_URL + '/saved-restaurant', { "business_id": data["business_id"] })
+			.then(() => {
+				setRestSavedStatus(true);
+			});
+	}
+
+	const removeRest = () => {
+		postData(BACKEND_URL + '/saved-restaurant', { "business_id": data["business_id"] })
+			.then(() => {
+				setRestSavedStatus(false);
+			});
+	}
+
+	const saveRestButton = (
+		<div className="InfoBox__primary__button--alt" onClick={restSavedStatus ? removeRest : saveRest}>
+			<span>
+				<div>{restSavedStatus ? "Remove" : "Save"} Restaurant</div>
+			</span>
+		</div>
+	)
+
+
 	return (
-
 		<div className="InfoBox">
-
 			<div className="InfoBox__primary">
 				<div className="col">
 					<div className="InfoBox__primary__number">{props.number}.</div>
@@ -55,6 +91,7 @@ const InfoBox = (props) => {
 					</div>
 					<div className="InfoBox__primary__address">{data['address']}</div>
 				</div>
+
 				<div className="col col--right">
 					<div className="InfoBox__primary__button" onClick={toggleSecondary}>
 						<span>
