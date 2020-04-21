@@ -55,14 +55,14 @@ const InfoBox = (props) => {
 	}, [data])
 
 	const saveRest = () => {
-		postData(BACKEND_URL + '/saved-restaurant', { "business_id": data["business_id"] })
+		postData(BACKEND_URL + '/save-restaurant', { "business_id": data["business_id"] })
 			.then(() => {
 				setRestSavedStatus(true);
 			});
 	}
 
 	const removeRest = () => {
-		postData(BACKEND_URL + '/saved-restaurant', { "business_id": data["business_id"] })
+		postData(BACKEND_URL + '/remove-restaurant', { "business_id": data["business_id"] })
 			.then(() => {
 				setRestSavedStatus(false);
 			});
