@@ -1,0 +1,15 @@
+@import "helpers";
+
+.MarketResearch {
+	display: block;
+	margin: 0 auto;
+
+	&__title {
+		display: block;
+		font-size: 1.25em;
+		text-align: center;
+		padding: 20px 50px;
+		border: 1px solid $c-grey;
+		border-bottom: none;
+	}
+}
