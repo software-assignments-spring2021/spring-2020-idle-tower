@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import './info-box.scss';
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';
+import { UserContext } from './user-context.js'
 
 const InfoBox = (props) => {
 	const data = props.data;
+
+	const [userState] = useContext(UserContext);
+	const isLoggedIn = userState['logged-in']
 
 	// Secondary section
 	// -----------------
