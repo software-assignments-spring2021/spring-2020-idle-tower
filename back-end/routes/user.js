@@ -15,7 +15,7 @@ function sendData(res, restaurantId, error) {
 
 // POST /save-restaurant
 router.post('/save-restaurant', (req, res) => {
-  const restaurantId = req.body['restaurant_id'];
+  const restaurantId = req.body['business_id'];
   console.log(restaurantId);
 
   // TODO: save restaurantId to user's saved_restaurants list
