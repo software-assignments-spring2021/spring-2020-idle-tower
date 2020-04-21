@@ -38,6 +38,12 @@ router.post('/save-restaurant', (req, res) => {
 
 
 // TODO: create route for /saved-restaurant-status
+// POST /saved-restaurant-status
+router.post('/saved-restaurant-status', (req, res) => {
+  res.end();
+}
+
+
 // TODO: create route for /remove-restaurant
 
 module.exports = router;
