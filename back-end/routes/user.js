@@ -28,7 +28,7 @@ router.post('/save-restaurant', (req, res) => {
   })
     .then((response) => {
       const err = response.data.error;
-      sendData(res, restaurantId, err);
+      sendData(response, restaurantId, err);
     })
     .catch((error) => {
       console.log(error);
