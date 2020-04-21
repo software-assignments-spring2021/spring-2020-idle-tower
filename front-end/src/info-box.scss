@@ -56,7 +56,7 @@ $border: 1px solid $c-grey;
 			display: block;
 		}
 
-		&__button {
+		&__button, &__button--alt {
 			@extend .button;
 			@extend .button--small;
 
@@ -70,6 +70,16 @@ $border: 1px solid $c-grey;
 
 			&__show-hide {
 				font-size: .75em;
+			}
+		}
+
+		&__button--alt {
+			@extend .button--blue;
+
+			span {
+				text-align: center;
+				margin: 10px;
+				padding: 5px 10px 5px 10px;
 			}
 		}
 	}

@@ -99,12 +99,11 @@ const InfoBox = (props) => {
 							<div className="InfoBox__primary__button__show-hide">{secondaryOpen ? "Hide" : "Show"}</div>
 						</span>
 					</div>
+					{isLoggedIn ? saveRestButton : null}
 				</div>
 			</div>
 
 			{secondaryOpen ? secondarySection : null}
-
-
 		</div>
 
 
