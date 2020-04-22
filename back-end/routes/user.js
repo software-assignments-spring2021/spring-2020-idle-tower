@@ -15,7 +15,7 @@ function sendData(res, restaurantId, error) {
 
 // POST /save-restaurant
 router.post('/save-restaurant', (req, res) => {
-  const restaurantId = req.body['business_id'];
+  const restaurantId = req.body.business_id;
 
   // TODO: save restaurantId to user's saved_restaurants list
   // req.user.markModified('saved_restaurants');
@@ -31,14 +31,14 @@ router.post('/save-restaurant', (req, res) => {
       sendData(res, restaurantId, err);
     })
     .catch((error) => {
-      console.log("error: ", error);
+      console.log('error: ', error);
     });
 });
 
 
 // POST /remove-restaurant
 router.post('/remove-restaurant', (req, res) => {
-  const restaurantId = req.body['business_id'];
+  const restaurantId = req.body.business_id;
 
   // TODO: remove restaurantId from user's saved_restaurants list
   // req.user.markModified('saved_restaurants');
@@ -54,7 +54,7 @@ router.post('/remove-restaurant', (req, res) => {
       sendData(res, restaurantId, err);
     })
     .catch((error) => {
-      console.log("error: ", error);
+      console.log('error: ', error);
     });
 });
 
