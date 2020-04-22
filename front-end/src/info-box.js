@@ -6,7 +6,8 @@ import { postData } from './_helpers';
 import { UserContext } from './user-context.js'
 
 const InfoBox = (props) => {
-	const data = props.data;
+	const { data } = props;
+	const isSaved = data.saved;
 
 	const [userState] = useContext(UserContext);
 	const isLoggedIn = userState['logged-in']
@@ -43,16 +44,7 @@ const InfoBox = (props) => {
 
 	// Save/delete restaurant to account
 	// ---------------------------------
-	const [restSavedStatus, setRestSavedStatus] = useState(false);
-
-	// set initial restSavedStatus value
-	// runs on component mount
-	useEffect(() => {
-		postData(BACKEND_URL + '/saved-restaurant-status', { "business_id": data["business_id"] })
-			.then((resData) => {
-				setRestSavedStatus(resData.saved);
-			});
-	}, [data])
+	const [restSavedStatus, setRestSavedStatus] = useState(isSaved);
 
 	const saveRest = () => {
 		postData(BACKEND_URL + '/save-restaurant', { "business_id": data["business_id"] })
