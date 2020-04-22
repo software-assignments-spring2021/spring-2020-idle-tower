@@ -1,0 +1,33 @@
+const express = require('express');
+
+const router = express.Router();
+
+function validateLogin(username, password) {
+  // TODO: check db
+  // auth logic
+  // should return valid=true if logged in successfully
+  // should return a session_id too
+  let valid = false;
+  let sessionId = '';
+
+  if (username && password) {
+    valid = true;
+    sessionId = 'abcd123';
+  }
+
+  return { valid, sessionId };
+}
+
+// POST /save-restaurant
+router.post('/login', (req, res) => {
+  const { username } = req.body;
+  const { password } = req.body;
+
+  const { valid, sessionId } = validateLogin(username, password);
+
+  const data = { valid, session_id: sessionId };
+  res.json(data);
+});
+
+
+module.exports = router;
