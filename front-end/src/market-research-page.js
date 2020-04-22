@@ -7,10 +7,10 @@ const MarketResearchPage = (props) => {
 	const [userState] = useContext(UserContext);
 	const components = [];
 	if (userState['logged-in']) {
-		components.push(<MarketResearch title="Saved Restaurants" />);
+		components.push(<MarketResearch title="Saved Restaurants" key="saved" />);
 		components.push(<br />);
 	}
-	components.push(<MarketResearch title="Top Restaurants in Your Area" />);
+	components.push(<MarketResearch title="Top Restaurants in Your Area" key="top" />);
 	
 	return (
 		<div className="MarketResearchPage">
