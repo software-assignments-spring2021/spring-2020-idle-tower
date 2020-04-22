@@ -47,14 +47,16 @@ const InfoBox = (props) => {
 	const [restSavedStatus, setRestSavedStatus] = useState(isSaved);
 
 	const saveRest = () => {
-		postData(BACKEND_URL + '/save-restaurant', { "business_id": data["business_id"] })
+		const bodyData = { business_id: data["business_id"] };
+		postData(BACKEND_URL + '/user/save-restaurant', bodyData)
 			.then(() => {
 				setRestSavedStatus(true);
 			});
 	}
 
 	const removeRest = () => {
-		postData(BACKEND_URL + '/remove-restaurant', { "business_id": data["business_id"] })
+		const bodyData = { business_id: data["business_id"] };
+		postData(BACKEND_URL + '/user/remove-restaurant', bodyData)
 			.then(() => {
 				setRestSavedStatus(false);
 			});
