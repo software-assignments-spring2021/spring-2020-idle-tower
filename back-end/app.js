@@ -9,7 +9,13 @@ const axios = require("axios"); // making request to API
 const morgan = require("morgan"); // logging HTTP requests
 const cors = require('cors'); // allow Cross Site Requests
 
-app.use(cors());
+// Import constants
+const CONSTANTS = require("./_constants");
+
+app.use(cors({
+  origin: CONSTANTS.FRONTEND_URL
+}));
+
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
