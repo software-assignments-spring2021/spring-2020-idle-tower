@@ -41,7 +41,7 @@ router.post('/save-restaurant', (req, res) => {
 // POST /saved-restaurant-status
 router.post('/saved-restaurant-status', (req, res) => {
   res.end();
-}
+});
 
 
 // TODO: create route for /remove-restaurant
