@@ -42,7 +42,9 @@ router.post('/login', (req, res) => {
 // GET logout
 router.get('/logout', function(req, res) {
   // req.logout();
-  res.redirect('/login');
+  const err = false;
+  const data = {error: err};
+  res.json(data);
 });
 
 
