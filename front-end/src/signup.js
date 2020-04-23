@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./signup.scss";
 import { Link } from "react-router-dom";
 
@@ -9,7 +10,7 @@ const Signup = (props) => {
     <div className="Signup">
       <Notification text={props.notificationText} error={props.error} />
       <h2>Signup</h2>
-      <form action="" method="" acceptCharset="utf-8">
+      <form action="/post-signup" method="POST" acceptCharset="utf-8">
         <label>
           Username: <input type="text" name="username" />
         </label>
@@ -30,4 +31,8 @@ const Signup = (props) => {
   );
 };
 
+Signup.propTypes = {
+  notificationText: PropTypes.string,
+  error: PropTypes.string,
+};
 export default Signup;

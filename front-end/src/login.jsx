@@ -10,7 +10,6 @@ const Login = (props) => {
   return (
     <div className="Login">
       <Notification text={notificationText} error={error} />
-      <h1>Testing</h1>
       <form action="" method="" acceptCharset="utf-8">
         <label htmlFor="username">
           Username:
