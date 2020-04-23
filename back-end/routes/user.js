@@ -3,13 +3,21 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-function sendData(res, restaurantId, error) {
+function sendData(res, restaurantId, error, remove = false) {
   const data = { error };
-  if (error) {
-    data.message = `Could not save restaurant ${restaurantId} to user's saved_restaurants list.`;
-  } else {
-    data.message = `Successfully saved restaurant ${restaurantId} to user's saved_restaurants list.`;
-  }
+  if (remove) {
+	  if (error) {
+	    data.message = `Could not remove restaurant ${restaurantId} from user's saved_restaurants list.`;
+	  } else {
+	    data.message = `Successfully removed restaurant ${restaurantId} from user's saved_restaurants list.`;
+	  }
+	} else {
+		if (error) {
+	    data.message = `Could not save restaurant ${restaurantId} to user's saved_restaurants list.`;
+	  } else {
+	    data.message = `Successfully saved restaurant ${restaurantId} to user's saved_restaurants list.`;
+	  }
+	}
   res.json(data);
 }
 
@@ -51,7 +59,7 @@ router.post('/remove-restaurant', (req, res) => {
   })
     .then((response) => {
       const err = response.data.error;
-      sendData(res, restaurantId, err);
+      sendData(res, restaurantId, err, true);
     })
     .catch((error) => {
       console.log('error: ', error);
