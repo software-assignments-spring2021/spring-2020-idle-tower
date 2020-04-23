@@ -20,7 +20,8 @@ $border: 1px solid $c-grey;
 		flex-grow: 1;
 
 		&--right {
-			text-align: right;
+			flex-grow: 0;
+			text-align: center;
 		}
 	}
 
@@ -56,9 +57,10 @@ $border: 1px solid $c-grey;
 			display: block;
 		}
 
-		&__button {
+		&__button, &__button--alt {
 			@extend .button;
 			@extend .button--small;
+			min-width: 210px;
 
 			span {
 				padding: 15px 30px 15px 30px;
@@ -70,6 +72,17 @@ $border: 1px solid $c-grey;
 
 			&__show-hide {
 				font-size: .75em;
+			}
+		}
+
+		&__button--alt {
+			@extend .button--blue;
+			min-width: 210px;
+
+			span {
+				text-align: center;
+				margin: 10px;
+				padding: 5px 10px 5px 10px;
 			}
 		}
 	}

@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useParams
-} from "react-router-dom";
+import React, { useState, useContext } from 'react';
+import { Link } from "react-router-dom";
 import './info-box.scss';
+import { BACKEND_URL } from './_constants';
+import { postData } from './_helpers';
+import { UserContext } from './user-context.js'
 
 const InfoBox = (props) => {
-	const data = props.data;
+	const { data } = props;
+	const isSaved = data.saved;
 
+	const [userState] = useContext(UserContext);
+	const isLoggedIn = userState['logged-in']
+
+	// Secondary section
+	// -----------------
 	const [secondaryOpen, setSecondaryOpen] = useState(false);
 
 	const toggleSecondary = () => {
@@ -37,10 +40,39 @@ const InfoBox = (props) => {
 			</div>
 		</div>
 	);
+
+
+	// Save/delete restaurant to account
+	// ---------------------------------
+	const [restSavedStatus, setRestSavedStatus] = useState(isSaved);
+
+	const saveRest = () => {
+		const bodyData = { business_id: data["business_id"] };
+		postData(BACKEND_URL + '/user/save-restaurant', bodyData)
+			.then(() => {
+				setRestSavedStatus(true);
+			});
+	}
+
+	const removeRest = () => {
+		const bodyData = { business_id: data["business_id"] };
+		postData(BACKEND_URL + '/user/remove-restaurant', bodyData)
+			.then(() => {
+				setRestSavedStatus(false);
+			});
+	}
+
+	const saveRestButton = (
+		<div className="InfoBox__primary__button--alt" onClick={restSavedStatus ? removeRest : saveRest}>
+			<span>
+				<div>{restSavedStatus ? "Remove" : "Save"} Restaurant</div>
+			</span>
+		</div>
+	)
+
+
 	return (
-
 		<div className="InfoBox">
-
 			<div className="InfoBox__primary">
 				<div className="col">
 					<div className="InfoBox__primary__number">{props.number}.</div>
@@ -53,6 +85,7 @@ const InfoBox = (props) => {
 					</div>
 					<div className="InfoBox__primary__address">{data['address']}</div>
 				</div>
+
 				<div className="col col--right">
 					<div className="InfoBox__primary__button" onClick={toggleSecondary}>
 						<span>
@@ -60,12 +93,11 @@ const InfoBox = (props) => {
 							<div className="InfoBox__primary__button__show-hide">{secondaryOpen ? "Hide" : "Show"}</div>
 						</span>
 					</div>
+					{isLoggedIn ? saveRestButton : null}
 				</div>
 			</div>
 
 			{secondaryOpen ? secondarySection : null}
-
-
 		</div>
 
 
