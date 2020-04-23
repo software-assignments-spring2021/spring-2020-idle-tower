@@ -10,6 +10,7 @@ function validateLogin(username, password) {
   let valid = false;
   let sessionId = '';
 
+  // Fake auth
   if (username && password) {
     valid = true;
     sessionId = 'abcd123';
@@ -18,7 +19,7 @@ function validateLogin(username, password) {
   return { valid, sessionId };
 }
 
-// POST /save-restaurant
+// POST /login
 router.post('/login', (req, res) => {
   const { username } = req.body;
   const { password } = req.body;
@@ -27,6 +28,21 @@ router.post('/login', (req, res) => {
 
   const data = { valid, session_id: sessionId };
   res.json(data);
+});
+
+
+// POST login
+// router.post('/login', passport.authenticate('login', {
+//   successRedirect: '/',
+//   failureRedirect: '/login',
+//   failureFlash : true  
+// }));
+
+
+// GET logout
+router.get('/logout', function(req, res) {
+  // req.logout();
+  res.redirect('/login');
 });
 
 
