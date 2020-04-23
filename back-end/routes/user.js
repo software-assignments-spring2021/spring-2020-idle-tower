@@ -6,18 +6,16 @@ const axios = require('axios');
 function sendData(res, restaurantId, error, remove = false) {
   const data = { error };
   if (remove) {
-	  if (error) {
-	    data.message = `Could not remove restaurant ${restaurantId} from user's saved_restaurants list.`;
-	  } else {
-	    data.message = `Successfully removed restaurant ${restaurantId} from user's saved_restaurants list.`;
-	  }
-	} else {
-		if (error) {
-	    data.message = `Could not save restaurant ${restaurantId} to user's saved_restaurants list.`;
-	  } else {
-	    data.message = `Successfully saved restaurant ${restaurantId} to user's saved_restaurants list.`;
-	  }
-	}
+    if (error) {
+      data.message = `Could not remove restaurant ${restaurantId} from user's saved_restaurants list.`;
+    } else {
+      data.message = `Successfully removed restaurant ${restaurantId} from user's saved_restaurants list.`;
+    }
+  } else if (error) {
+    data.message = `Could not save restaurant ${restaurantId} to user's saved_restaurants list.`;
+  } else {
+    data.message = `Successfully saved restaurant ${restaurantId} to user's saved_restaurants list.`;
+  }
   res.json(data);
 }
 
