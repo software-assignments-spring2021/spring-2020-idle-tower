@@ -1,3 +1,7 @@
 {
-  "extends": ["airbnb", "airbnb/hooks"]
+  "extends": ["airbnb", "airbnb/hooks"],
+  "env": {
+  	"mocha": true,
+  	"node": true
+  }
 }
