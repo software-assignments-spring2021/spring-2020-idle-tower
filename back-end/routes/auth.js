@@ -43,7 +43,7 @@ router.post('/login', (req, res) => {
 router.get('/logout', function(req, res) {
   // req.logout();
   const err = false;
-  const data = {error: err};
+  const data = {'error': err};
   res.json(data);
 });
 
