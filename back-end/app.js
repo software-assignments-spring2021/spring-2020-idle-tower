@@ -23,8 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 const indexRoutes = require('./routes/index')
 const userRoutes = require('./routes/user')
+const signupRoutes = require('./routes/signup')
 
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
+app.use('/signup', signupRoutes);
 
 module.exports = app;

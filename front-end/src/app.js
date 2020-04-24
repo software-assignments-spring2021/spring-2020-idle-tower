@@ -30,15 +30,13 @@ export default function App() {
                   />
                 </Route>
                 <Route path="/signup">
-                  <Signup
-                    notificationText="Please Sign Up"
-                    error="Invalid Credentials"
-                  />
+                  <Signup />
                 </Route>
                 <Route path="/market-research">
                   <MarketResearchPage />
                 </Route>
                 <Route path = "/Restaurant_Dashboard/" component={Restaurant_Dashboard}></Route>
+                
               </Switch>
             </div>
           </div>
