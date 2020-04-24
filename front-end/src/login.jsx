@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import './login.scss';
 
 import Notification from './notification';
@@ -23,6 +24,11 @@ const Login = (props) => {
         </label>
         <input type="submit" name="submit" value="Submit" />
       </form>
+      <br/>
+      <p>New user?</p>
+      <Link to="/signup" id="signup-link">
+        Signup Now!
+      </Link>
     </div>
   );
 };

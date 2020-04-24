@@ -5,14 +5,12 @@ import validator from "validator";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';
-import { UserContext } from './user-context.js'
 
 
 const Signup = (props) => {
 
   // create account request 
   const createUser = () => {
-    console.log('nigga');
     const bodyData = {username: "asdf", email:"asd", password :"fff"};
     postData(BACKEND_URL + '/signup/add-user',bodyData);
   };
@@ -66,7 +64,7 @@ const Signup = (props) => {
         <label>
           Confirm Password: <input type="password" name="confirm_password" />
         </label>
-        <button id = "submit" onClick = {createUser}>Submit</button>
+        <button id = "submit" action = {createUser}>Submit</button>
       </form>
       
       <br />
