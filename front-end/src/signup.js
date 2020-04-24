@@ -1,16 +1,29 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import "./signup.scss";
 import { Link } from "react-router-dom";
 import validator from "validator";
-import Notification from "./notification-signup.js";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { BACKEND_URL } from './_constants';
+import { postData } from './_helpers';
+import { UserContext } from './user-context.js'
 
-class Signup extends Component {
 
-  createNotification = (type) => {
+const Signup = (props) => {
+
+  // create account request 
+  const createUser = () => {
+    console.log('nigga');
+    const bodyData = {username: "asdf", email:"asd", password :"fff"};
+    postData(BACKEND_URL + '/signup/add-user',bodyData);
+  };
+
+
+  const createNotification = (type) => {
     return () => {
       switch (type) {
+        default:
+          
+        break;
         case 'info' :
           NotificationManager.info ("Please fill in the form to sign up.");
           break;
@@ -26,7 +39,7 @@ class Signup extends Component {
 
   };
   
-  validate_email = (email) =>{
+  const validate_email = (email) =>{
     if (validator.isEmail(email)){
     }
     else{
@@ -34,16 +47,13 @@ class Signup extends Component {
     }
   }
 
-render(){
   return (
     <div className="Signup">
 
-      <NotificationContainer />
       
-      <div class = "info">{this.createNotification.info}</div>
         
       <h2>Signup</h2>
-      <form action="/post-signup" method="POST" acceptCharset="utf-8">
+      <form action="/signup" method="POST" acceptCharset="utf-8">
         <label>
           Username: <input type="text" name="username" />
         </label>
@@ -56,8 +66,9 @@ render(){
         <label>
           Confirm Password: <input type="password" name="confirm_password" />
         </label>
-        <button type="submit" name="submit" value="Submit"  onClick = {this.validate_email('asf')}> Submit </button>
+        <button id = "submit" onClick = {createUser}>Submit</button>
       </form>
+      
       <br />
       <p>Already a member?</p>
       <Link to="/login" id="login_link">
@@ -66,7 +77,7 @@ render(){
     </div>
   );
 }
-};
+
 
 /* Signup.propTypes = {
   notificationText: PropTypes.string,
