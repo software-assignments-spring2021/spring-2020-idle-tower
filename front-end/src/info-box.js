@@ -64,6 +64,7 @@ const InfoBox = (props) => {
 
 	const saveRestButton = (
 		<div className="InfoBox__primary__button--alt" onClick={restSavedStatus ? removeRest : saveRest}>
+			nigga
 			<span>
 				<div>{restSavedStatus ? "Remove" : "Save"} Restaurant</div>
 			</span>
