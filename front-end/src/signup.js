@@ -5,68 +5,86 @@ import validator from "validator";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';
+import Notification from './notification';
 
 
-const Signup = (props) => {
+class Signup extends React.Component {
+  constructor (props){
+    super (props)
+    this.state = {username: "", email:"", password:"", password_confirm:""};
+    this.handleChangeUsername = this.handleChangeUsername.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleChangePassword_confrim = this.handleChangePassword_confrim.bind(this);
 
-  // create account request 
-  const createUser = () => {
-    const bodyData = {username: "asdf", email:"asd", password :"fff"};
-    postData(BACKEND_URL + '/signup/add-user',bodyData);
-  };
+
+    this.handleSubmit = this.handleSubmit.bind(this);    
 
 
-  const createNotification = (type) => {
-    return () => {
-      switch (type) {
-        default:
-          
-        break;
-        case 'info' :
-          NotificationManager.info ("Please fill in the form to sign up.");
-          break;
-        
-        case 'errorEmail' :
-          NotificationManager.errorEmail ("Enter a valid email");
-          break;
-        case 'errorPassword':
-          NotificationManager.errorPassword ("Passwords must match");
-          break;
-      };
-    };
 
-  };
-  
-  const validate_email = (email) =>{
-    if (validator.isEmail(email)){
-    }
-    else{
-      console.log('fao')
-    }
   }
+  // create account request 
+  handleSubmit = event => {
+    this.verifyPasswords();
+    
+    this.verifyEmail();
+    
+    const bodyData = {username: this.state.username, email:this.state.email, password : this.state.password};
+    postData(BACKEND_URL + '/signup/add-user',this.state);
+    alert('what you sent' + this.state.username + this.state.email + this.state.password) ;
+    event.preventDefault();
+  };
 
+
+
+  handleChangeUsername = (event) => {
+    this.setState({username: event.target.value});
+  };
+  handleChangeEmail = (event) => {
+    this.setState({email: event.target.value});
+  };
+  handleChangePassword = (event) => {
+    this.setState({password: event.target.value});
+  };
+  handleChangePassword_confrim = (event) =>{
+    this.setState({password_confirm: event.target.value});
+  }
+  verifyEmail  = () =>{
+    if (!(validator.isEmail(this.state.email))){
+        alert("Please enter a valid email address");
+    }
+
+  };
+  verifyPasswords = () =>{
+    if (this.state.password != this.state.password_confirm) {
+      alert("Passwords do not match ");
+    }
+  };
+
+  
+  
+  render () {
   return (
     <div className="Signup">
-
       
         
       <h2>Signup</h2>
-      <form action="/signup" method="POST" acceptCharset="utf-8">
+      <form onSubmit = {this.handleSubmit}>
         <label>
-          Username: <input type="text" name="username" />
+          Username: <input type="text" name="username" value = {this.state.username} onChange = {this.handleChangeUsername}/>
         </label>
         <label>
-          Email: <input type="password" name="email" />
+          Email: <input type="text" name="email" value = {this.state.email} onChange = {this.handleChangeEmail}/>
         </label>
         <label>
-          Password: <input type="password" name="password" />
+          Password: <input type="text" name="password" value = {this.state.password} onChange = {this.handleChangePassword}/>
         </label>
         <label>
-          Confirm Password: <input type="password" name="confirm_password" />
+          Confirm Password: <input type="text" name="confirm_password" value = {this.state.password_confirm} onChange = {this.handleChangePassword_confrim}/>
         </label>
-        <button id = "submit" action = {createUser}>Submit</button>
+        <input type = "submit" value = "Submit"></input>
       </form>
-      
+
       <br />
       <p>Already a member?</p>
       <Link to="/login" id="login_link">
@@ -74,7 +92,8 @@ const Signup = (props) => {
       </Link>
     </div>
   );
-}
+  };
+};
 
 
 /* Signup.propTypes = {
