@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import "./Review_cards_RD.scss";

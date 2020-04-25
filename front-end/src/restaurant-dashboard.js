@@ -2,9 +2,9 @@ import React from 'react';
 
 import "./restaurant-dashboard.scss";
 //all the components on the dashboard page
-import QuickFactsRD from "./Quick_Facts_RD.js";
-import HeaderRD from "./Header_RD.js";
-import ReviewcardsRD from "./Review_cards_RD.js";
+import Quick_Facts_RD from "./Quick_Facts_RD.js";
+import Header_RD from "./Header_RD.js";
+import Review_cards_RD from "./Review_cards_RD.js";
 
 // This is just a layout of what the resturant page 
 
@@ -51,10 +51,10 @@ import ReviewcardsRD from "./Review_cards_RD.js";
     return ( 
 
        <div className = "Restaruant_Dashboard">
-           <HeaderRD response = {business_data} />
-           <QuickFactsRD response = {business_data} />
-           <ReviewcardsRD response = {business_data} type_review = "Positive"/>
-           <ReviewcardsRD response = {business_data} type_review = "Negative"/>
+           <Header_RD response = {business_data} />
+           <Quick_Facts_RD response = {business_data} />
+           <Review_cards_RD response = {business_data} type_review = "Positive"/>
+           <Review_cards_RD response = {business_data} type_review = "Negative"/>
 
            
        </div>        

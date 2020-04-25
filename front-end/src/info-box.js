@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import './info-box.scss';
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';

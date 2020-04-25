@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Header_RD.scss";
 
 const Header_RD  =  (props) =>{

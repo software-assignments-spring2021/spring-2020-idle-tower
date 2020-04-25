@@ -1,7 +1,7 @@
 import React from "react";
 import "./lib/reset.css";
 import "./app.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { UserProvider } from "./user-context.js";
 // Components
 import Login from "./login";
@@ -30,13 +30,15 @@ export default function App() {
                   />
                 </Route>
                 <Route path="/signup">
-                  <Signup />
+                  <Signup
+                    notificationText="Please Sign Up"
+                    error="Invalid Credentials"
+                  />
                 </Route>
                 <Route path="/market-research">
                   <MarketResearchPage />
                 </Route>
                 <Route path = "/Restaurant_Dashboard/" component={Restaurant_Dashboard}></Route>
-                
               </Switch>
             </div>
           </div>
