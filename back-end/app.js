@@ -19,6 +19,12 @@ app.use(cors({
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
+// configure the app to use bodyParser()
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
 
 // Routes
 const indexRoutes = require('./routes/index')

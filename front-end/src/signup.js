@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import "./signup.scss";
 import { Link } from "react-router-dom";
 import validator from "validator";
-import {NotificationContainer, NotificationManager} from 'react-notifications';
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';
-import Notification from './notification';
 
 
-class Signup extends React.Component {
+class Signup extends Component {
   constructor (props){
     super (props)
     this.state = {username: "", email:"", password:"", password_confirm:""};
@@ -16,12 +14,7 @@ class Signup extends React.Component {
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.handleChangePassword_confrim = this.handleChangePassword_confrim.bind(this);
-
-
-    this.handleSubmit = this.handleSubmit.bind(this);    
-
-
-
+    this.handleSubmit = this.handleSubmit.bind(this);   
   }
   // create account request 
   handleSubmit = event => {
@@ -30,8 +23,13 @@ class Signup extends React.Component {
     this.verifyEmail();
     
     const bodyData = {username: this.state.username, email:this.state.email, password : this.state.password};
-    postData(BACKEND_URL + '/signup/add-user',this.state);
-    alert('what you sent' + this.state.username + this.state.email + this.state.password) ;
+   
+
+    postData(BACKEND_URL + '/signup/add-user', bodyData)
+      .then((data) => {
+        console.log(data);
+    });
+    console.log('what you sent: ' + JSON.stringify(bodyData)) ;
     event.preventDefault();
   };
 
@@ -56,7 +54,7 @@ class Signup extends React.Component {
 
   };
   verifyPasswords = () =>{
-    if (this.state.password != this.state.password_confirm) {
+    if (this.state.password !== this.state.password_confirm) {
       alert("Passwords do not match ");
     }
   };
