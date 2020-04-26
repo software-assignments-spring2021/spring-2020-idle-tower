@@ -65,7 +65,6 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 // https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
 
 const initPassport = require('./passport/init');
 initPassport(passport);
