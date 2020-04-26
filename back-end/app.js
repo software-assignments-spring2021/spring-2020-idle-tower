@@ -19,14 +19,23 @@ app.use(cors({
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
+// configure the app to use bodyParser()
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
 
 // Routes
 const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/user'); 
 const authRoutes = require('./routes/auth');
+const signupRoutes = require('./routes/signup');
 
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
+app.use('/signup', signupRoutes);
+
 
 module.exports = app;
