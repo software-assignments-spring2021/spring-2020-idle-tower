@@ -61,15 +61,6 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 	url = 'http://localhost';
 }
 
-// express-session middleware
-// creates sessions for users
-const sessionOptions = { 
-	secret: secret, 
-	saveUninitialized: false, 
-	resave: false 
-};
-app.use(session(sessionOptions));
-
 // Setup Passport
 // https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
 app.use(passport.initialize());
