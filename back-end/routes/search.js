@@ -15,10 +15,13 @@ const searchData = () => {
 let searchResult = [];
 const category = searchData.category;
 
+//for fuzzy search
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
 
 router.get("/search", function(req,res){
-
-
     for (let i = 0; i<searchData.length; i++){
         for (let j=0; j<searchData[i].category.length; j++){
             if (searchData[i].category[j] === req.param.id){
@@ -44,7 +47,5 @@ router.get("/search", function(req,res){
 
 });
 
-//for fuzzy search
-function escapeRegex(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-};
+module.exports = router;
+
