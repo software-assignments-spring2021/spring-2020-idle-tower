@@ -27,12 +27,15 @@ app.use(bodyParser.json());
 
 
 // Routes
-const indexRoutes = require('./routes/index')
-const userRoutes = require('./routes/user')
-const signupRoutes = require('./routes/signup')
+const indexRoutes = require('./routes/index');
+const userRoutes = require('./routes/user'); 
+const authRoutes = require('./routes/auth');
+const signupRoutes = require('./routes/signup');
 
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
 app.use('/signup', signupRoutes);
+
 
 module.exports = app;
