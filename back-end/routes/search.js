@@ -13,7 +13,6 @@ const searchData = () => {
     }
 }
 let searchResult = [];
-
 const category = searchData.category;
 
 
@@ -29,6 +28,8 @@ router.get("/search", function(req,res){
             }
         }
     }
+
+    res.send(searchResult);
     // if (req.query.search){
     //     //get relevant search results
     //     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
