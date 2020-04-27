@@ -30,9 +30,11 @@ app.use(bodyParser.json());
 const indexRoutes = require('./routes/index')
 const userRoutes = require('./routes/user')
 const signupRoutes = require('./routes/signup')
+const searchRoutes = require('./routes/search')
 
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
 app.use('/signup', signupRoutes);
+app.use('/search', searchRoutes);
 
 module.exports = app;

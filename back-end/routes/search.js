@@ -12,7 +12,8 @@ const searchData = () => {
 
     }
 }
-let searchResult = [];
+let searchResultArray = [];
+let searchResult = {searchResults: searchResultArray};
 const category = searchData.category;
 
 //for fuzzy search
@@ -25,14 +26,14 @@ router.get("/search", function(req,res){
     for (let i = 0; i<searchData.length; i++){
         for (let j=0; j<searchData[i].category.length; j++){
             if (searchData[i].category[j] === req.param.id){
-                if(! searchResult.include(searchData[i]) ){
-                    searchResult.push(searchData[i]);
+                if(! searchResultArray.include(searchData[i]) ){
+                    searchResultArray.push(searchData[i]);
                 }
             }
         }
     }
 
-    res.send(searchResult);
+    res.json(searchResult);
     // if (req.query.search){
     //     //get relevant search results
     //     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
