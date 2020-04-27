@@ -71,15 +71,17 @@ initPassport(passport);
 
 
 // Routes
-const indexRoutes = require('./routes/index');
-const userRoutes = require('./routes/user'); 
+const indexRoutes = require('./routes/index')
+const userRoutes = require('./routes/user')
 const authRoutes = require('./routes/auth');
-const signupRoutes = require('./routes/signup');
+const signupRoutes = require('./routes/signup')
+const searchRoutes = require('./routes/search')
 
 app.use('/', indexRoutes);
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 app.use('/signup', signupRoutes);
+app.use('/search', searchRoutes);
 
 
 module.exports = app;
