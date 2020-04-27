@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { UserProvider } from "./user-context.js";
 // Components
 import Login from "./login";
+import Logout from "./logout";
 import Signup from "./signup.js";
 import MarketResearchPage from './market-research-page.js'
 import Restaurant_Dashboard from './restaurant-dashboard.js'
@@ -28,6 +29,9 @@ export default function App() {
                     notificationText="Welcome to FoodCheck! Please login"
                     error="Invalid credentials"
                   />
+                </Route>
+                <Route path="/logout">
+                  <Logout />
                 </Route>
                 <Route path="/signup">
                   <Signup />
