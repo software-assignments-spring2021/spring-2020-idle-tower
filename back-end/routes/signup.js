@@ -1,17 +1,13 @@
 const express = require("express")
 const router = express.Router()
-//const bodyParser = require('body-parser')
 
-router.post('/add-user', (req,res) =>{
-    const username  = req.body.username;
-    const email  = req.body.email;
-    const password = req.body.password;
-    console.log("Username:",username, "Email:", email, "Password: ",password);
-    //console.log(req);
-    console.log('Recived');
-    res.send({done: "yes"});
+
+router.post('/add-user', passport.authenticate('signup', { session : false }) , async (req, res, next) => {
+  res.json({ 
+    message: "Signup successful",
+    done: "yes",
+    user: req.user 
+  });
 });
 
 module.exports = router;
-
-
