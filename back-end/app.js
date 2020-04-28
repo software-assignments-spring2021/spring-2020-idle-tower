@@ -28,6 +28,8 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
+require('./auth/auth');
+
 // configure the app to use bodyParser()
 app.use(
   bodyParser.urlencoded({
@@ -64,14 +66,6 @@ if (process.env.NODE_ENV === "PRODUCTION") {
   url = "http://localhost";
 }
 
-// Setup Passport
-// https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
-app.use(passport.initialize());
-app.use(passport.session());
-
-const initPassport = require("./passport/init");
-initPassport(passport);
-
 // Routes
 const indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
@@ -81,7 +75,7 @@ const searchRoutes = require("./routes/search");
 const restaurantRoutes = require("./routes/restaurants");
 
 app.use("/", indexRoutes);
-app.use("/user", userRoutes);
+app.use('/user', passport.authenticate('jwt', { session : false }), userRoutes);
 app.use("/auth", authRoutes);
 app.use("/signup", signupRoutes);
 app.use("/search", searchRoutes);

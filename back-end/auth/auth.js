@@ -1,6 +1,9 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-const UserModel = require('../model/model');
+const UserModel = require('../models/User');
+const JWTstrategy = require('passport-jwt').Strategy;
+//We use this to extract the JWT sent by the user
+const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 //Create a passport middleware to handle user registration
 passport.use('signup', new localStrategy({
@@ -42,9 +45,6 @@ passport.use('login', new localStrategy({
   }
 }));
 
-const JWTstrategy = require('passport-jwt').Strategy;
-//We use this to extract the JWT sent by the user
-const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 //This verifies that the token sent by the user is valid
 passport.use(new JWTstrategy({
