@@ -16,7 +16,7 @@ const Logout = (props) => {
         const newUserState = userState;
         newUserState['logged-in'] = false;
 
-        setUserState({"logged-in": false});
+        setUserState(newUserState);
       }
     });
 
