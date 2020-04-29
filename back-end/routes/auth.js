@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken');
 
 
 router.post('/login', async (req, res, next) => {
-  passport.authenticate('login', async (err, user, info) => {     try {
+  passport.authenticate('login', async (err, user, info) => {
+    try {
       if(err || !user){
         const error = new Error('An Error occured')
         return next(error);
@@ -19,7 +20,8 @@ router.post('/login', async (req, res, next) => {
         const token = jwt.sign({ user : body },'top_secret');
         //Send back the token to the user
         return res.json({ token });
-      });     } catch (error) {
+      });
+    } catch (error) {
       return next(error);
     }
   })(req, res, next);
