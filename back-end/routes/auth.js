@@ -27,4 +27,9 @@ router.post('/login', async (req, res, next) => {
   })(req, res, next);
 });
 
+// POST /test
+router.post('/test', passport.authenticate('jwt', { session : false }), (req, res) => {
+  return res.json({ error: false});  
+});
+
 module.exports = router;
