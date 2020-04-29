@@ -7,7 +7,8 @@
     "start": "nodemon ./server.js",
     "test": "mocha",
     "coverage": "nyc npm run test",
-    "prod": "NODE_ENV=PRODUCTION node ./server.js"
+    "prod": "NODE_ENV=PRODUCTION node ./server.js",
+    "forever": "npx forever ./server.js"
   },
   "author": "",
   "license": "ISC",
