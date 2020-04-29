@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { UserContext } from './user-context.js';
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';
@@ -12,6 +12,7 @@ import Notification from './notification';
 const Login = (props) => {
   const [userState, setUserState] = useContext(UserContext);
   const [notificationEl, setNotificationEl] = useState(<Notification text="Please login" error="" />);
+  const [redirect, setRedirect] = useState(false);
 
   const submitLogin = (event) => {
     event.preventDefault();
@@ -26,9 +27,10 @@ const Login = (props) => {
           const newUserState = userState;
           newUserState['logged-in'] = true;
           setUserState(newUserState);
+          console.log(userState);
 
           // TODO: save JWT token in local storage
-          // TODO: redirect to dashboard page
+          setRedirect(true);
         } else {
           console.log("error!!");
           setNotificationEl(<Notification text="Please login" error="Error loging in. Please try again" />);
@@ -36,8 +38,15 @@ const Login = (props) => {
       });
   }
 
+  let redirectEl = null;
+  if(redirect) {
+    redirectEl = <Redirect to="/" />;
+  }
+
   return (
     <div className="Login">
+      {redirectEl}
+
       <h2>Login</h2>
       {notificationEl}
       <form action="" method="" acceptCharset="utf-8">
