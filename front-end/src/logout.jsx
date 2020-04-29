@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from './user-context.js'
 import { BACKEND_URL } from './_constants';
-import { postData } from './_helpers';
 
 
 const Logout = (props) => {
@@ -17,7 +16,7 @@ const Logout = (props) => {
         const newUserState = userState;
         newUserState['logged-in'] = false;
 
-        setUserState({"logged-in": false});
+        setUserState(newUserState);
       }
     });
 

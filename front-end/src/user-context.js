@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react";
-
+import { BACKEND_URL } from './_constants';
+import { postData } from './_helpers';
 
 
 const UserContext = React.createContext([false, () => {}]);
 
 const UserProvider = (props) => {
-	const [state, setState] = useState({});
+	const [state, setState] = useState({'logged-in': false});
 
 	// Get mock data
 	useEffect(() => {
-		fetch('https://my.api.mockaroo.com/login.json?key=71f47770')
-		.then(response => response.json())
-		.then(d => {
-			const newState = {
-				'logged-in': d['valid'],
-			}
-			setState(newState);
-		});
+		postData(BACKEND_URL + '/auth/test', {})
+			.then((res) => {
+				const newState = state
+				
+				if (res.error) {
+					newState['logged-in'] = false
+				} else {
+					newState['logged-in'] = true
+				}
+
+				setState(newState);
+			});
 	}, [])
 
 	return (
