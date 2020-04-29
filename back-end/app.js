@@ -26,7 +26,7 @@ app.use(
 );
 
 app.use(morgan("dev"));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 require('./auth/auth');
 
@@ -80,5 +80,22 @@ app.use("/auth", authRoutes);
 app.use("/signup", signupRoutes);
 app.use("/search", searchRoutes);
 app.use("/restaurants", restaurantRoutes);
+
+app.use(function (req, res, next) {
+  res.status(404);
+
+  res.json({
+      message: "page not found", 
+      error: "404"
+  });
+});
+
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.json({
+      message: err.message, 
+      error: err
+  });
+});
 
 module.exports = app;
