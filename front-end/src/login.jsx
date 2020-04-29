@@ -23,16 +23,15 @@ const Login = (props) => {
     postData(BACKEND_URL + '/auth/login', bodyData)
       .then((res) => {
         if (!res.error) {
-          console.log(res);
           const newUserState = userState;
           newUserState['logged-in'] = true;
           setUserState(newUserState);
-          console.log(userState);
 
-          // TODO: save JWT token in local storage
+          // save JWT token in local storage
+          localStorage.setItem('secret_token', res.token);
+
           setRedirect(true);
         } else {
-          console.log("error!!");
           setNotificationEl(<Notification text="Please login" error="Error loging in. Please try again" />);
         }
       });
