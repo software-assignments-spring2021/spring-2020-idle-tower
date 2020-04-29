@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon ./server.js",
     "test": "mocha",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "prod": "NODE_ENV=PRODUCTION node ./server.js"
   },
   "author": "",
   "license": "ISC",
