@@ -29,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prod": "serve -s build -l 80"
+    "prod": "serve -s build -l 80 &"
   },
   "eslintConfig": {
     "extends": "react-app"
