@@ -93,5 +93,12 @@ Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/bl
 ### How to Update
 
 1. Git pull the updates.
-2. Run `forever stopall`
-3. Run `npm run forever`
+
+**Backend**
+
+1. Run `forever stopall`
+2. Run `npm run forever`
+
+**Frontend**
+
+1. Find the job by 
