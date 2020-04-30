@@ -82,3 +82,9 @@ Contributing: https://github.com/nyu-software-engineering/spring-2020-idle-tower
 
 Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/blob/master/ux-design/Agile-wireframe.xd
 
+## Running on a remove machine
+
+1. Clone the repo onto the remote machine.
+2. Create a config.json file in the same directory as the repo (NOTE: not in the repo, just above it).
+3. cd into back-end diretory, then run npm run forever.
+4. cd into front-end directory, then run npm run build, then run npm run prod.
