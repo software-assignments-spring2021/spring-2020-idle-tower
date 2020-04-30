@@ -101,4 +101,4 @@ Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/bl
 
 **Frontend**
 
-1. Find the job by 
+1. Run `service frontend start`
