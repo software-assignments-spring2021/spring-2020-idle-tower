@@ -85,6 +85,13 @@ Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/bl
 ## Running on a remove machine
 
 1. Clone the repo onto the remote machine.
-2. Create a config.json file in the same directory as the repo (NOTE: not in the repo, just above it).
-3. cd into back-end diretory, then run npm run forever.
-4. cd into front-end directory, then run npm run build, then run npm run prod.
+2. Create a `config.json` file in the same directory as the repo (NOTE: not in the repo, just above it).
+3. Create a `.env` file in front-end directory.
+4. cd into back-end diretory, then run `npm run forever`.
+5. cd into front-end directory, then run `npm run build`, then run `npm run prod`.
+
+### How to Update
+
+1. Git pull the updates.
+2. Run `forever stopall`
+3. Run `npm run forever`
