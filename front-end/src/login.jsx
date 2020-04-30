@@ -50,7 +50,7 @@ const Login = (props) => {
       {notificationEl}
       <form action="" method="" acceptCharset="utf-8">
         <label htmlFor="email">
-          Username:
+          Email:
           <input type="text" name="email" id="email" />
         </label>
         <label htmlFor="password">

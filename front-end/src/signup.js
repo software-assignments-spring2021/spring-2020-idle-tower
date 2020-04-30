@@ -69,9 +69,6 @@ class Signup extends Component {
       <h2>Signup</h2>
       <form onSubmit = {this.handleSubmit}>
         <label>
-          Username: <input type="text" name="username" value = {this.state.username} onChange = {this.handleChangeUsername}/>
-        </label>
-        <label>
           Email: <input type="text" name="email" value = {this.state.email} onChange = {this.handleChangeEmail}/>
         </label>
         <label>
