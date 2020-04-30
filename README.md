@@ -82,7 +82,7 @@ Contributing: https://github.com/nyu-software-engineering/spring-2020-idle-tower
 
 Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/blob/master/ux-design/Agile-wireframe.xd
 
-## Running on a remove machine
+## Running on a remote machine
 
 1. Clone the repo onto the remote machine.
 2. Create a `config.json` file in the same directory as the repo (NOTE: not in the repo, just above it).
@@ -101,4 +101,5 @@ Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/bl
 
 **Frontend**
 
-1. Run `service frontend start`
+1. Run `service frontend stop`
+2. Run `service frontend start`
