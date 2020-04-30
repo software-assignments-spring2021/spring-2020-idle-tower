@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon ./server.js",
     "test": "mocha",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "prod": "NODE_ENV=PRODUCTION node ./server.js",
+    "forever": "export NODE_ENV=PRODUCTION; npx forever start ./server.js"
   },
   "author": "",
   "license": "ISC",

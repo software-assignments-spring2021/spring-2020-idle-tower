@@ -14,10 +14,10 @@ const UserProvider = (props) => {
 			.then((res) => {
 				const newState = state
 				
-				if (res.error) {
-					newState['logged-in'] = false
-				} else {
+				if (res.error === false) {
 					newState['logged-in'] = true
+				} else {
+					newState['logged-in'] = false
 				}
 
 				setState(newState);

@@ -22,7 +22,7 @@ const Login = (props) => {
     const bodyData = { email: email, password: password };
     postData(BACKEND_URL + '/auth/login', bodyData)
       .then((res) => {
-        if (!res.error) {
+        if (res.token) {
           const newUserState = userState;
           newUserState['logged-in'] = true;
           setUserState(newUserState);

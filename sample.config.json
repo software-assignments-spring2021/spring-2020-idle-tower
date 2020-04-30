@@ -1,5 +1,6 @@
 {
   "secret": "AB3NzaC1yc2EAAAADAQABAAACAQDmTLS51CgwWJ5ouPBKVyQPdAYKV4aBaW8aGATH4fA1RR4L93vXBmNTnqrF/rdtEUHBMnhVQyl/aYkDdffYDNfO215Y0xgl3",
   "port": 3000,
-  "url": "http://example.com"
+  "url": "http://example.com",
+  "dbconf": "mongodb://localhost/foodcheck"
 }

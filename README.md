@@ -82,3 +82,24 @@ Contributing: https://github.com/nyu-software-engineering/spring-2020-idle-tower
 
 Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/blob/master/ux-design/Agile-wireframe.xd
 
+## Running on a remote machine
+
+1. Clone the repo onto the remote machine.
+2. Create a `config.json` file in the same directory as the repo (NOTE: not in the repo, just above it).
+3. Create a `.env` file in front-end directory.
+4. cd into back-end diretory, then run `npm run forever`.
+5. cd into front-end directory, then run `npm run build`, then run `npm run prod`.
+
+### How to Update
+
+1. Git pull the updates.
+
+**Backend**
+
+1. Run `forever stopall`
+2. Run `npm run forever`
+
+**Frontend**
+
+1. Run `service frontend stop`
+2. Run `service frontend start`
