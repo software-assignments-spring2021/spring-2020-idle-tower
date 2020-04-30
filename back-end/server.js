@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "PRODUCTION") {
   const data = fs.readFileSync(fn);
 
   const conf = JSON.parse(data);
-  port = conf.port;
+  port = conf.backend_port;
 } else {
   // if we're not in PRODUCTION mode, then use
   port = 3000;

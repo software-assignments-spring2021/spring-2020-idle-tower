@@ -42,7 +42,6 @@ app.use(bodyParser.json());
 app.use("/static", express.static("static"));
 
 // get config
-let secret;
 let port;
 let url;
 if (process.env.NODE_ENV === "PRODUCTION") {
@@ -56,12 +55,10 @@ if (process.env.NODE_ENV === "PRODUCTION") {
   // our configuration file will be in json, so parse it and set the
   // conenction string appropriately!
   const conf = JSON.parse(data);
-  secret = conf.sessionSecret;
-  port = conf.port;
-  url = conf.url;
+  port = conf.backend_port;
+  url = conf.backend_url;
 } else {
   // if we're not in PRODUCTION mode, then use
-  secret = "12345678910";
   port = 3000;
   url = "http://localhost";
 }
