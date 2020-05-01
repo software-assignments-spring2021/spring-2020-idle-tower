@@ -96,10 +96,12 @@ Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/bl
 
 **Backend**
 
-1. Run `forever stopall`
-2. Run `npm run forever`
+1. cd into back-end directory
+2. Run `forever stopall`
+3. Run `npm run forever`
 
 **Frontend**
 
-1. Run `service frontend stop`
-2. Run `service frontend start`
+1. cd into front-end directory
+2. Run `service frontend stop`
+3. Run `service frontend start`
