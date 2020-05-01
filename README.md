@@ -104,4 +104,5 @@ Prototype: https://github.com/nyu-software-engineering/spring-2020-idle-tower/bl
 
 1. cd into front-end directory
 2. Run `service frontend stop`
-3. Run `service frontend start`
+3. Run `npm run build`
+4. Run `service frontend start`
