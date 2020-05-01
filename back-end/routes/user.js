@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+
 const router = express.Router();
 const axios = require('axios');
 const UserModel = require('../models/User');
@@ -29,19 +30,18 @@ router.post('/save-restaurant',
     const restaurantId = req.body.business_id;
 
     // TODO: save restaurantId to user's saved_restaurants list
-    user = UserModel.findOne({ "_id": req.user._id }, (err, user) => {
+    UserModel.findOne({ _id: req.user._id }, (err, user) => {
       user.saved_restaurants.addToSet(restaurantId);
       user.markModified('saved_restaurants');
-      user.save(function(err, modifiedUser) {
-         console.log(err, modifiedUser);
-         if (err) {
-          res.json({"error": err});
-         }
-         res.json({"message": "Restaurant successfully saved.", "user": modifiedUser})
+      user.save((err2, modifiedUser) => {
+        console.log(err2, modifiedUser);
+        if (err2) {
+          res.json({ error: err2 });
+        }
+        res.json({ message: 'Restaurant successfully saved.', user: modifiedUser });
       });
     });
-  }
-);
+  });
 
 
 // POST /remove-restaurant
