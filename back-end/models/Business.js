@@ -14,6 +14,10 @@ const BusinessSchema = new Schema({
         type: String,
         required: true,
     },
+    "city":{
+        type: String,
+        required: true,
+    },
     "stars":{
         type: Number,
         required: true,
