@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './market-research.scss';
-
 import RestaurantList from './restaurant-list.js';
+
+import { BACKEND_URL } from './_constants';
+import { postData } from './_helpers';
 
 
 const MarketResearch = (props) => {
@@ -11,16 +13,25 @@ const MarketResearch = (props) => {
 	
 	// Get mock data
 	useEffect(() => {
-		fetch('https://my.api.mockaroo.com/business.json?key=71f47770')
-		.then(response => response.json())
-		.then(d => {
-			// if (d['error']) {
-			// 	// handle mockaroo API error
-			// }
+		fetchData();
+		// fetch()
+		// .then(response => response.json())
+		// .then(d => {
+		// 	// if (d['error']) {
+		// 	// 	// handle mockaroo API error
+		// 	// }
 			
-			setData(d);
-		});
+		// 	setData(d);
+		// });
 	}, [])
+
+	async function fetchData(){
+		const res = fetch(BACKEND_URL + 'restaurant/list');
+		res 
+			.json()
+			.then(res => setData(res));
+			
+	}
 	// 
 	return (
 		<div className="MarketResearch">
