@@ -22,11 +22,8 @@ function escapeRegex(text) {
 }
 
 router.get("/search", function(req, res) {
-  SearchSchema.find(
-    {
-      cuisine: req.query,
-      distance: {$gte: 10}
-    })
+  
+
 
   });
 
