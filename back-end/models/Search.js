@@ -9,6 +9,6 @@ const SearchSchema = new Schema({
     distance: Number  
 });
 
-const SearchSchema =  mongoose.nodel('searchOject', SearchSchema);
+const SearchSchema =  mongoose.model('searchOject', SearchSchema);
 
 module.exports = SearchSchema;

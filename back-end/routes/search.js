@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+// import SearchSchema from "../models/Search.js"
+
 
 //mockaroo data object
 const searchData = () => {
@@ -20,17 +22,15 @@ function escapeRegex(text) {
 }
 
 router.get("/search", function(req, res) {
-  for (let i = 0; i < searchData.length; i++) {
-    for (let j = 0; j < searchData[i].category.length; j++) {
-      if (searchData[i].category[j] === req.param.id) {
-        if (!searchResultArray.include(searchData[i])) {
-          searchResultArray.push(searchData[i]);
-        }
-      }
-    }
-  }
+  SearchSchema.find(
+    {
+      cuisine: req.query,
+      distance: {$gte: 10}
+    })
 
-  res.json(searchResult);
+  });
+
+  // res.json(searchResult);
   // if (req.query.search){
   //     //get relevant search results
   //     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
@@ -41,6 +41,6 @@ router.get("/search", function(req, res) {
   //     //get top restaurants around
 
   // }
-});
+
 
 module.exports = router;
