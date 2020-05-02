@@ -17,7 +17,7 @@ const MarketResearch = (props) => {
 			console.log(res)
 			setData(res)
 		})
-		// fetch()
+		// fetch(BACKEND_URL + "/restaurants/list")
 		// .then(response => response.json())
 		// .then(d => {
 		// 	// if (d['error']) {
