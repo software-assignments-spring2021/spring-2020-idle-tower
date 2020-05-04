@@ -9,6 +9,7 @@ const MarketResearch = (props) => {
 	/* Get data */
 	// Init state
 	const [data, setData] = useState(0);
+	const [data2,setData2] = useState(0)
 	
 	// Get mock data
 	useEffect(() => {
@@ -17,6 +18,12 @@ const MarketResearch = (props) => {
 			console.log(res)
 			setData(res)
 		})
+		// axios.get(BACKEND_URL+'/restaurants/list2')
+		// .then( res => {
+		// 	console.log(res)
+		// 	setData2(res)
+		// })
+		
 		// fetch(BACKEND_URL + "/restaurants/list")
 		// .then(response => response.json())
 		// .then(d => {
