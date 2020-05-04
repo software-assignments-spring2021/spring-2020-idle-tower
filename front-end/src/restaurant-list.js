@@ -13,7 +13,8 @@ const RestaurantList = (props) => {
 	useEffect(() => {
 		if (data !== 0) {
 			const tempRows = []
-			for(const obj of data) {
+			//
+			for(var obj in data) {
 				tempRows.push(<InfoBox
 					key={obj.business_id}
 					data={obj}
