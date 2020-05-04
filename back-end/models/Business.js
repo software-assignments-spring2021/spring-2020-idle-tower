@@ -27,7 +27,7 @@ const BusinessSchema = new Schema({
         required: true,
     },
     "categories":{
-        type: Array,
+        type: [String],
         required: true,
     },
     "food_check_score" :{
@@ -50,6 +50,6 @@ const BusinessSchema = new Schema({
     
 });
 
-const RestaurantModel = mongoose.model("restaurant", RestaurantSchema);
+const BusinessModel = mongoose.model("business", BusinessSchema);
 
-module.exports = RestaurantModel;
+module.exports = BusinessModel;
