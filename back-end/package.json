@@ -21,8 +21,11 @@
     "mongoose-text-search": "0.0.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+<<<<<<< HEAD
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+=======
+>>>>>>> 814c342362931e30ab8249a0e35ca3dd6a7bd216
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
