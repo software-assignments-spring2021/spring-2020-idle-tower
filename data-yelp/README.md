@@ -5,7 +5,7 @@
 
 ## Folders 
 - cleaning-script: the python script I used to clean yelp data for resturants only 
-- processed-files: buis and review csv files that we used in the final deployment 
+- processed-files-script: buis and review csv files that we used in the final deployment and code used to make it 
 - training-testing-set: original answer key and training and testing set 
 - nlp-implementation: src files of the different nlp methods I used
 
