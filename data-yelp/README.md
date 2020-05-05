@@ -7,6 +7,7 @@
 - cleaning-script: the python script I used to clean yelp data for resturants only 
 - processed-files: buis and review csv files that we used in the final deployment 
 - training-testing-set: original answer key and training and testing set 
+- nlp-implementation: src files of the different nlp methods I used
 
 ## NLP methods 
 1. BoW selecting for all words --> Naive Bayes (80.33% accuracy)
