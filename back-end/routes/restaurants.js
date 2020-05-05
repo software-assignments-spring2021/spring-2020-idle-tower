@@ -17,14 +17,27 @@ router.get("/list", (req, res) => {
 
   })
 
-  // axios
-  //   .get("https://my.api.mockaroo.com/list_restaurants.json?key=552a1800")
-  //   .then((response) => {
-  //     res.send(response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
 });
+
+
+
+//Compeitors 
+router.get("/list2", (req, res) => {
+  BusinessModel.find({city:"Phoenix"}, (err,list2) => {
+    console.log(err, list2);
+    if (err) {
+      return res.json({
+        confirmation: "fail", 
+        error: err
+      });
+    }
+    return res.json({
+      confirmation: 'success',
+      data: list2
+    })
+
+
+    });
+})
 
 module.exports = router;
