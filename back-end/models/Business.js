@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const Schema =  mongoose.Schema;
+const textSearch = require('mongoose-text-search');
+
+
 
 const BusinessSchema = new Schema({
     "business_id":{
@@ -49,6 +52,9 @@ const BusinessSchema = new Schema({
 
     
 });
+
+BusinessSchema.plugin(textSearch)
+BusinessSchema.index({categories: 'text' })
 
 const BusinessModel = mongoose.model("business", BusinessSchema);
 

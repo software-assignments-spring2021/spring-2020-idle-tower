@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+
+const BusinessModel = require("../models/Business");
 // import SearchSchema from "../models/Search.js"
 
 
@@ -21,11 +23,27 @@ function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }
 
-router.get("/search", function(req, res) {
+router.get("/search", (req,res) => {
+  BusinessModel.find({$text :{$search : "mexican" }},(err, searchResults)=> {
+    console.log(err, searchResults);
+    if (err) {
+      return res.json({
+        confirmation: "fail",
+        error: err
+
+      });
+    }
+    return res.json({
+      confirmation:"success",
+      data: searchResults
+    });
+
+  })
+
   
 
 
-  });
+});
 
   // res.json(searchResult);
   // if (req.query.search){
