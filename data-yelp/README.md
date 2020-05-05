@@ -4,7 +4,9 @@
 - Picked the top 5 most postive and most negative reviews for each resturant 
 
 ## Folders 
-- cleaning-script: the python script I used to process 
+- cleaning-script: the python script I used to clean yelp data for resturants only 
+- processed-files: buis and review csv files that we used in the final deployment 
+- training-testing-set: the answer key 
 
 ## NLP methods 
 1. BoW selecting for all words --> Naive Bayes (80.33% accuracy)
