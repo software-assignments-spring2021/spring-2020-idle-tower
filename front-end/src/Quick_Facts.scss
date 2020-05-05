@@ -1,0 +1,43 @@
+
+#box{
+    margin: 7%;
+}
+#title{
+    font-weight: lighter;
+    font-size: 150%;
+    padding-left:1%;
+    padding-bottom: 4%;
+
+
+}
+
+#quick-facts{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: stretch;
+	align-items: center;
+    align-content: center;
+    padding: 10px;
+    border: 2px solid black;
+    
+	
+
+}
+
+.col{
+    display: block;
+	flex-grow: 1;
+	text-align: center;
+}
+
+.data{
+    display: block;
+	font-size: 1.5em;
+}
+
+.title{
+    display: block;
+	font-size: .8em;
+}
+

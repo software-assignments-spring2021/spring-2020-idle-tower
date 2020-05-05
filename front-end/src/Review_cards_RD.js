@@ -5,6 +5,11 @@ import "./Review_cards_RD.scss";
 
 
 const Review_cards_RD = (props) =>{
+  
+  const id = props.business_id;
+  const type = props.type_review;
+  console.log(id,type)
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -26,17 +31,20 @@ const Review_cards_RD = (props) =>{
   };
   return (
     <div class = "review">
-      <h1 id = "type_review"> {props.type_review} Reviews </h1>
-      <Carousel id = "carousel_review" responsive={responsive}>
-      <div class = "card_review"><div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      <h1 id = "type_review"> 5 Most {props.type_review} Reviews </h1>
+      <Carousel id = "carousel_review"  responsive={responsive} dotListClass="custom-dot-list-style"
+        
+        >
+      
+      <div class = "card_review">The resturant was great. Would eat again amazing food and 
       atmostphere. Highly reccomend!</div>
-      <div class = "card_review"> <div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      <div class = "card_review"> The resturant was great. Would eat again amazing food and 
       atmostphere. Highly reccomend!</div>
-      <div class = "card_review"> <div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      <div class = "card_review"> The resturant was great. Would eat again amazing food and 
       atmostphere. Highly reccomend!</div>
-      <div class = "card_review"><div class = "review_title"> Review Title</div>The place was horrible! I saw rats and they
+      <div class = "card_review">The place was horrible! I saw rats and they
       didnt even wash their hands when preparing food. Disgusting! Do not reccomend. </div>
-      <div class = "card_review"><div class = "review_title"> Review Title</div>The resturant was great. Would eat again amazing food and 
+      <div class = "card_review">The resturant was great. Would eat again amazing food and 
       atmostphere. Highly reccomend!</div>
       </Carousel>
     </div>
