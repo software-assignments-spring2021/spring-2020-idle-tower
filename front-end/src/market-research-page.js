@@ -3,6 +3,7 @@ import MarketResearch from './market-research.js';
 import { UserContext } from './user-context.js'
 import axios from 'axios';
 import { BACKEND_URL } from './_constants';
+import { postData } from './_helpers';
 
 const MarketResearchPage = (props) => {
 	const [userState] = useContext(UserContext);
@@ -18,26 +19,14 @@ const MarketResearchPage = (props) => {
 		.then( res => {
 			console.log(res)
 			setData(res)
-		})
+		});
 
-
-		axios.get(BACKEND_URL+'/restaurants/list2')
-		.then(response => response.data.data)
-		.then( res => {
-			console.log(res)
-			setData2(res)
-		})
-		
-		// fetch(BACKEND_URL + "/restaurants/list")
-		// .then(response => response.json())
-		// .then(d => {
-		// 	// if (d['error']) {
-		// 	// 	// handle mockaroo API error
-		// 	// }
-			
-		// 	setData(d);
-		// });
-	}, [])
+		postData(BACKEND_URL+'/user/list-saved-restaurants')
+		.then( res_data => {
+			console.log(res_data)
+			setData2(res_data)
+		});
+	}, []);
 
 	if (userState['logged-in']) {
 		components.push(<MarketResearch data={data2} title="Saved Restaurants" key="saved" />);
