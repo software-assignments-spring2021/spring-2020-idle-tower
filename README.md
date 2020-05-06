@@ -1,5 +1,5 @@
-# spring-2020-idle-tower
 
+# spring-2020-idle-tower [![Build Status](https://travis-ci.com/nyu-software-engineering/spring-2020-idle-tower.svg?branch=master)](https://travis-ci.com/nyu-software-engineering/spring-2020-idle-tower)
 # Food Check 
 
 ## Project Vision Statement
