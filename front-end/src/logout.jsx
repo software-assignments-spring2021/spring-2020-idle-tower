@@ -15,7 +15,7 @@ const Logout = (props) => {
         message = "Logged out successfully"
         const newUserState = userState;
         newUserState['logged-in'] = false;
-
+        localStorage.removeItem('secret_token');
         setUserState(newUserState);
       }
     });
