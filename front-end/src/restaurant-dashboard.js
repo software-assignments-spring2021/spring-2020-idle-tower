@@ -5,6 +5,7 @@ import "./restaurant-dashboard.scss";
 import QuickFactsRD from "./Quick_Facts_RD.js";
 import HeaderRD from "./Header_RD.js";
 import ReviewcardsRD from "./Review_cards_RD.js";
+import ReviewRatio from "./review-ratio.js";
 
 // This is just a layout of what the resturant page 
 
@@ -53,6 +54,7 @@ import ReviewcardsRD from "./Review_cards_RD.js";
        <div className = "Restaruant_Dashboard">
            <HeaderRD response = {business_data} />
            <QuickFactsRD response = {business_data} />
+           <ReviewRatio response = {business_data}/>
            <ReviewcardsRD response = {business_data} type_review = "Positive"/>
            <ReviewcardsRD response = {business_data} type_review = "Negative"/>
 
