@@ -6,13 +6,13 @@ import { BACKEND_URL } from './_constants';
 
 
 const MarketResearch = (props) => {
-	const data = props.data
+	const {data, saved, title} = props;
 	
 	return (
 		<div className="MarketResearch">
 			<div className="MarketResearch__title">{props.title}</div>
 		
-			<RestaurantList response={data} key={props.title} />
+			<RestaurantList response={data} key={title} saved={saved} />
 		</div>
 	)
 }

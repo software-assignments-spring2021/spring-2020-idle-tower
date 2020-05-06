@@ -29,7 +29,7 @@ const MarketResearchPage = (props) => {
 	}, []);
 
 	if (userState['logged-in']) {
-		components.push(<MarketResearch data={data2} title="Saved Restaurants" key="saved" />);
+		components.push(<MarketResearch data={data2} saved={true} title="Saved Restaurants" key="saved" />);
 		components.push(<br />);
 	}
 	components.push(<MarketResearch data={data} title="Top Restaurants in Your Area" key="top" />);

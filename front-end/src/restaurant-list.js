@@ -6,10 +6,11 @@ import InfoBox from './info-box.js';
 
 const RestaurantList = (props) => {
 	const data = props.response;
-	const empty_obj = {'name': 'Loading', 'address': 'Loading', 'review_count': 0};
-	const empty_infobox = <InfoBox key='empty' data={empty_obj} number='1' />
+	const saved = props.saved;
+	const loading_obj = {'name': 'Loading', 'address': 'Loading', 'review_count': 0};
+	const loading_infobox = <InfoBox key='loading' data={loading_obj} number='1' />
 
-	const [rows, setRows] = useState([empty_infobox]);
+	const [rows, setRows] = useState([loading_infobox]);
 	useEffect(() => {
 		if (data !== 0) {
 			const tempRows = []
@@ -18,13 +19,12 @@ const RestaurantList = (props) => {
 				tempRows.push(<InfoBox
 					key={obj.business_id}
 					data={obj}
-					number={tempRows.length+1} />)
-				console.log("xxx", obj)
-				
+					number={tempRows.length+1}
+					saved={saved} />);
 			}
-			setRows(tempRows)
+			setRows(tempRows);
 		}
-	}, [data])
+	}, [data, saved]);
 
 
 
