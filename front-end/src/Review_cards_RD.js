@@ -5,8 +5,8 @@ import "./Review_cards_RD.scss";
 
 
 const Review_cards_RD = (props) =>{
-  
-  const id = props.business_id;
+  const data = props.response; 
+  const id = data["business_id"];
   const type = props.type_review;
   console.log(id,type)
 
@@ -32,9 +32,7 @@ const Review_cards_RD = (props) =>{
   return (
     <div class = "review">
       <h1 id = "type_review"> 5 Most {props.type_review} Reviews </h1>
-      <Carousel id = "carousel_review"  responsive={responsive} dotListClass="custom-dot-list-style"
-        
-        >
+      <Carousel id = "carousel_review"  responsive={responsive} dotListClass="custom-dot-list-style">
       
       <div class = "card_review">The resturant was great. Would eat again amazing food and 
       atmostphere. Highly reccomend!</div>
