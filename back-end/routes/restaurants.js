@@ -1,22 +1,22 @@
 const express = require("express");
 const router = express.Router();
 // const axios = require("axios");
-const Business = require("../models/Business")
+const BusinessModel = require("../models/Business")
 
 // GET route for restaurants
 router.get("/list", (req, res) => {
-  Business.find(
-    { $or :
-    [{ city : "New York"},{dollar_sign : {$lt : 4}},]})
-    .then( list => {
-      res.json({
-        confirmation: 'success',
-        data: list
-      })
-    })
-    .catch (err => {
-      confirmation: 'fail'
-    })
+  BusinessModel.find((err, list) => {
+    console.log(err, list);
+    if (err) {
+      return res.json({confirmation: 'fail', error: err});
+    }
+    return res.json({
+      confirmation: 'success',
+      data: list
+    });
+
+  })
+
 
   // axios
   //   .get("https://my.api.mockaroo.com/list_restaurants.json?key=552a1800")
