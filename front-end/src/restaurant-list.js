@@ -14,11 +14,12 @@ const RestaurantList = (props) => {
 		if (data !== 0) {
 			const tempRows = []
 			//
-			for(var obj in data) {
+			for(var obj of data) {
 				tempRows.push(<InfoBox
 					key={obj.business_id}
 					data={obj}
 					number={tempRows.length+1} />)
+				console.log("xxx", obj)
 				
 			}
 			setRows(tempRows)

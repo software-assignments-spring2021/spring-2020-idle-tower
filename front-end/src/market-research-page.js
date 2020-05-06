@@ -13,9 +13,8 @@ const MarketResearchPage = (props) => {
 	
 	// Get mock data
 	useEffect(() => {
-
-		
 		axios.get(BACKEND_URL+'/restaurants/list')
+		.then(response => response.data.data)
 		.then( res => {
 			console.log(res)
 			setData(res)
@@ -23,6 +22,7 @@ const MarketResearchPage = (props) => {
 
 
 		axios.get(BACKEND_URL+'/restaurants/list2')
+		.then(response => response.data.data)
 		.then( res => {
 			console.log(res)
 			setData2(res)
@@ -40,7 +40,7 @@ const MarketResearchPage = (props) => {
 	}, [])
 
 	if (userState['logged-in']) {
-		components.push(<MarketResearch data2 ={data2} title="Saved Restaurants" key="saved" />);
+		components.push(<MarketResearch data={data2} title="Saved Restaurants" key="saved" />);
 		components.push(<br />);
 	}
 	components.push(<MarketResearch data={data} title="Top Restaurants in Your Area" key="top" />);
