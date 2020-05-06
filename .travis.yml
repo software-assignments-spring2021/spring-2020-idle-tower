@@ -6,4 +6,6 @@ notifications:
   slack: nyusoftwaredev:VMpxzcsV1cGir6cjpJRmoqOG
 script:
   - cd front-end
-  - npm run-script build
+  - npm install
+  - cd ../back-end
+  - npm install
