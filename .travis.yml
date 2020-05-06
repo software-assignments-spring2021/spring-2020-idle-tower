@@ -4,3 +4,6 @@ node_js:
   - "7"
 notifications:
   slack: nyusoftwaredev:VMpxzcsV1cGir6cjpJRmoqOG
+script:
+  - cd front-end
+  - npm run-script build
