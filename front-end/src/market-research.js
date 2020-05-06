@@ -6,36 +6,35 @@ import { BACKEND_URL } from './_constants';
 
 
 const MarketResearch = (props) => {
+	const data = props.data
 	/* Get data */
 	// Init state
-	const [data, setData] = useState(0);
-	const [data2,setData2] = useState(0)
+	// const [data, setData] = useState(0);
+	// const [data2,setData2] = useState(0)
 	
-	// Get mock data
-	useEffect(() => {
-		axios.get(BACKEND_URL+'/restaurants/list')
-		.then( res => {
-			console.log(res)
-			setData(res)
-		})
-		// axios.get(BACKEND_URL+'/restaurants/list2')
-		// .then( res => {
-		// 	console.log(res)
-		// 	setData2(res)
-		// })
+	// // Get mock data
+	// useEffect(() => {
+	// 	axios.get(BACKEND_URL+'/restaurants/list')
+	// 	.then( res => {
+	// 		console.log(res)
+	// 		setData(res)
+	// 	})
+	// 	// axios.get(BACKEND_URL+'/restaurants/list2')
+	// 	// .then( res => {
+	// 	// 	console.log(res)
+	// 	// 	setData2(res)
+	// 	// })
 		
-		// fetch(BACKEND_URL + "/restaurants/list")
-		// .then(response => response.json())
-		// .then(d => {
-		// 	// if (d['error']) {
-		// 	// 	// handle mockaroo API error
-		// 	// }
+	// 	// fetch(BACKEND_URL + "/restaurants/list")
+	// 	// .then(response => response.json())
+	// 	// .then(d => {
+	// 	// 	// if (d['error']) {
+	// 	// 	// 	// handle mockaroo API error
+	// 	// 	// }
 			
-		// 	setData(d);
-		// });
-	}, [])
-
-
+	// 	// 	setData(d);
+	// 	// });
+	// }, [])
 	// 
 	return (
 		<div className="MarketResearch">
