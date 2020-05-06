@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "node"
-  - "7"
+  - "10.15"
 notifications:
   slack: nyusoftwaredev:VMpxzcsV1cGir6cjpJRmoqOG
 script:
