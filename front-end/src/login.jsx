@@ -28,6 +28,7 @@ const Login = (props) => {
           setUserState(newUserState);
 
           // save JWT token in local storage
+          console.log(res);
           localStorage.setItem('secret_token', res.token);
 
           setRedirect(true);
