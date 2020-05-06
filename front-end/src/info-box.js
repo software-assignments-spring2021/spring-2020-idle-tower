@@ -7,7 +7,7 @@ import { UserContext } from './user-context.js'
 
 const InfoBox = (props) => {
 	const { data } = props;
-	const isSaved = data.saved;
+	const isSaved = props.saved;
 
 	const [userState] = useContext(UserContext);
 	const isLoggedIn = userState['logged-in']
