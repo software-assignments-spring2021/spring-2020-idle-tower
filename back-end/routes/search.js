@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+const BusinessModel = require("../models/Business");
+// import SearchSchema from "../models/Search.js"
+
+
 //mockaroo data object
 const searchData = () => {
   try {
@@ -19,18 +23,29 @@ function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }
 
-router.get("/search", function(req, res) {
-  for (let i = 0; i < searchData.length; i++) {
-    for (let j = 0; j < searchData[i].category.length; j++) {
-      if (searchData[i].category[j] === req.param.id) {
-        if (!searchResultArray.include(searchData[i])) {
-          searchResultArray.push(searchData[i]);
-        }
-      }
-    }
-  }
+router.get("/search", (req,res) => {
+  BusinessModel.find({$text :{$search : "mexican" }},(err, searchResults)=> {
+    console.log(err, searchResults);
+    if (err) {
+      return res.json({
+        confirmation: "fail",
+        error: err
 
-  res.json(searchResult);
+      });
+    }
+    return res.json({
+      confirmation:"success",
+      data: searchResults
+    });
+
+  })
+
+  
+
+
+});
+
+  // res.json(searchResult);
   // if (req.query.search){
   //     //get relevant search results
   //     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
@@ -41,6 +56,6 @@ router.get("/search", function(req, res) {
   //     //get top restaurants around
 
   // }
-});
+
 
 module.exports = router;
