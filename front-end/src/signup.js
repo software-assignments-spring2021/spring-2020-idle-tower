@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import validator from "validator";
 import { BACKEND_URL } from './_constants';
 import { postData } from './_helpers';
+import Notification from './notification';
 
 
 class Signup extends Component {
   constructor (props){
     super (props)
-    this.state = {username: "", email:"", password:"", password_confirm:""};
+    this.state = {username: "", email:"", password:"", password_confirm:"", notificationText: "Please sign up"};
     this.handleChangeUsername = this.handleChangeUsername.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
@@ -28,6 +29,11 @@ class Signup extends Component {
     postData(BACKEND_URL + '/signup/add-user', bodyData)
       .then((data) => {
         console.log(data);
+        if (data.error) {
+          this.setState({notificationText: "Signup Failed. Please try again."});
+        } else {
+          this.setState({notificationText: "Signup Successful!"});
+        }
     });
     console.log('what you sent: ' + JSON.stringify(bodyData)) ;
     event.preventDefault();
@@ -67,6 +73,8 @@ class Signup extends Component {
       
         
       <h2>Signup</h2>
+      <Notification text={this.state.notificationText} error="" />
+      
       <form onSubmit = {this.handleSubmit}>
         <label>
           Email: <input type="text" name="email" value = {this.state.email} onChange = {this.handleChangeEmail}/>
