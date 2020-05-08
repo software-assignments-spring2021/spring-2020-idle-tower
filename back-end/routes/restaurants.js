@@ -21,24 +21,4 @@ router.get("/list", (req, res) => {
 });
 
 
-
-//Compeitors 
-router.get("/list2", (req, res) => {
-  BusinessModel.find({city:"Phoenix"}, (err,list2) => {
-    console.log(err, list2);
-    if (err) {
-      return res.json({
-        confirmation: "fail", 
-        error: err
-      });
-    }
-    return res.json({
-      confirmation: 'success',
-      data: list2
-    })
-
-
-    });
-})
-
 module.exports = router;

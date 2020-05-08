@@ -10,6 +10,9 @@ const Review_cards_RD = (props) =>{
   const type = props.type_review;
   console.log(id,type)
 
+
+  
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
