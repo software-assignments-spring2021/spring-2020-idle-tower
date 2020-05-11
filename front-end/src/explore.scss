@@ -1,31 +1,52 @@
-#explore-hero form {
-    text-align: center;
-    height: 300px;
-    
-    
-}
-
-#Explore-NSI-hero, #ExploreFeatures, #ExploreSignUp{
-    height: 400px;
-    text-align: center;  
+.explore {
+    width: 100%;
+    // flexbox
     display: flex;
-    justify-content: center;
-    align-items: center;  
-    text-align: center;    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    // 
+    padding: 10px;
+    font-size: 1rem;
 
-}
-#sign-up-button{
-    height: 40px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-#button-div{
-    display: block;
+    &__title {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+
+        &--primary {
+            font-size: 4em;
+            margin: 200px 0;
+        }
+        
+        &--secondary {
+            font-size: 3em;
+        }
+    }
+
+    &__features {
+        display: block;
+        text-align: center;
+        margin: 50px auto;
+        width: 100%;
+        font-size: 1.5em;
+    }
+
+    &__cta {
+        margin: 15px auto;
+
+        button {
+            height: 40px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
 }
