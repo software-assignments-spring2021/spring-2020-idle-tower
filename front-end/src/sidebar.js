@@ -1,28 +1,23 @@
-import React, { useContext, useState, useEffect } from "react";
-import { slide as Menu } from "react-burger-menu";
-import { Link } from "react-router-dom";
-import { UserContext } from './user-context.js'
+import React from 'react';
+import { slide as Menu } from 'react-burger-menu';
+import { Link } from 'react-router-dom';
 
 export default (props) => {
-  const start_login_link = (
+  const login_link = (
     <Link to="/login" className="menu-item">
       Login
     </Link>
-  )
-  const start_signup_link = (
+  );
+  const signup_link = (
     <Link to="/signup" className="menu-item">
       Sign Up
     </Link>
-  )
-  const start_logout_link = (
+  );
+  const logout_link = (
     <Link to="/logout" className="menu-item">
       Logout
     </Link>
-  )
-  const [userState] = useContext(UserContext);
-  let [login_link, set_login_link] = useState(start_login_link);
-  let [signup_link, set_signup_link] = useState(start_signup_link);;
-  let [logout_link, set_logout_link]= useState(start_logout_link);
+  );
 
   return (
     // Pass on our props
