@@ -54,33 +54,30 @@ class Explore extends React.Component {
 
 
     return (
-      <div className="ExploreNotSignedIn">
+        <div className="explore">
+            <div class="explore__title explore__title--primary">
+                <span> Welcome to Food Check</span>
+            </div>
 
-        <div id="Explore-NSI-hero">
-          <h1> Welcome to Food Check</h1>
+            <div class="explore__title explore__title--secondary">
+                <span>Features in FoodCheck</span>
+            </div>
 
+            <div class="explore__features">
+                <ul>
+                    <li>personalized dahsboard on restaurant insights</li>
+                    <li>detailed analysis on competitors</li>
+                    <li>explore nearby restaurants</li>
+                </ul>
+            </div>
+
+            <div class="explore__title explore__title--secondary">
+                <span>Sign up for food check!</span>
+            </div>
+            <div class="explore__cta">
+                <Link to="./signup"><button>sign up</button></Link>
+            </div>
         </div>
-        <div id="ExploreFeatures">
-          <h2>Features in FoodCheck</h2>
-          <ul>
-            <li>personalized dahsboard on restaurant insights</li>
-            <li>detailed analysis on competitors</li>
-            <li>explore nearby restaurants</li>
-          </ul>
-        </div>
-        <div id="ExploreSignUp">
-          <h2>Sign up for food check!</h2>
-          <h1> </h1>
-          <div id="button-div">
-            <Link to="./signup"><button id="sign-up-button">sign up</button></Link>
-            <Switch>
-              <Route path="/signup">
-                <Signup notificationText="Welcome to FoodCheck! Please Sign Up!" />
-              </Route>
-            </Switch>
-          </div>
-        </div>
-      </div>
     );
   }
 }
