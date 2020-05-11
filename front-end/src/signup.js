@@ -15,16 +15,16 @@ class Signup extends Component {
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.handleChangePassword_confrim = this.handleChangePassword_confrim.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);   
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  // create account request 
+  // create account request
   handleSubmit = event => {
     this.verifyPasswords();
-    
+
     this.verifyEmail();
-    
+
     const bodyData = {username: this.state.username, email:this.state.email, password : this.state.password};
-   
+
 
     postData(BACKEND_URL + '/signup/add-user', bodyData)
       .then((data) => {
@@ -65,25 +65,25 @@ class Signup extends Component {
     }
   };
 
-  
-  
+
+
   render () {
   return (
     <div className="Signup">
-      
-        
+
+
       <h2>Signup</h2>
       <Notification text={this.state.notificationText} error="" />
-      
+
       <form onSubmit = {this.handleSubmit}>
         <label>
           Email: <input type="text" name="email" value = {this.state.email} onChange = {this.handleChangeEmail}/>
         </label>
         <label>
-          Password: <input type="text" name="password" value = {this.state.password} onChange = {this.handleChangePassword}/>
+          Password: <input type="password" name="password" value = {this.state.password} onChange = {this.handleChangePassword}/>
         </label>
         <label>
-          Confirm Password: <input type="text" name="confirm_password" value = {this.state.password_confirm} onChange = {this.handleChangePassword_confrim}/>
+          Confirm Password: <input type="password" name="confirm_password" value = {this.state.password_confirm} onChange = {this.handleChangePassword_confrim}/>
         </label>
         <input type = "submit" value = "Submit"></input>
       </form>
