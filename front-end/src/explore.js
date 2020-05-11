@@ -1,12 +1,7 @@
 import React from 'react';
 import './explore.scss';
 import axios from 'axios';
-import {
-  Switch,
-  Route,
-  Link,
-} from 'react-router-dom';
-import Signup from './signup';
+import { Link } from 'react-router-dom';
 import SearchResults from './search-results';
 
 
@@ -54,30 +49,30 @@ class Explore extends React.Component {
 
 
     return (
-        <div className="explore">
-            <div class="explore__title explore__title--primary">
-                <span> Welcome to Food Check</span>
-            </div>
-
-            <div class="explore__title explore__title--secondary">
-                <span>Features in FoodCheck</span>
-            </div>
-
-            <div class="explore__features">
-                <ul>
-                    <li>personalized dahsboard on restaurant insights</li>
-                    <li>detailed analysis on competitors</li>
-                    <li>explore nearby restaurants</li>
-                </ul>
-            </div>
-
-            <div class="explore__title explore__title--secondary">
-                <span>Sign up for food check!</span>
-            </div>
-            <div class="explore__cta">
-                <Link to="./signup"><button>sign up</button></Link>
-            </div>
+      <div className="explore">
+        <div className="explore__title explore__title--primary">
+          <span> Welcome to Food Check</span>
         </div>
+
+        <div className="explore__title explore__title--secondary">
+          <span>Features in FoodCheck</span>
+        </div>
+
+        <div className="explore__features">
+          <ul>
+            <li>personalized dahsboard on restaurant insights</li>
+            <li>detailed analysis on competitors</li>
+            <li>explore nearby restaurants</li>
+          </ul>
+        </div>
+
+        <div className="explore__title explore__title--secondary">
+          <span>Sign up for food check!</span>
+        </div>
+        <div className="explore__cta">
+          <Link to="./signup"><button>sign up</button></Link>
+        </div>
+      </div>
     );
   }
 }

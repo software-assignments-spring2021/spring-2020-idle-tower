@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useContext } from 'react';
 import { Link, Redirect } from "react-router-dom";
 import { UserContext } from './user-context.js';
 import { BACKEND_URL } from './_constants';
