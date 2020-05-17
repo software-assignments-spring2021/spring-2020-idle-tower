@@ -23,15 +23,11 @@ const InfoBox = (props) => {
   const secondarySection = (
     <div className="InfoBox__secondary">
       <div className="col">
-        <div className="InfoBox__secondary__data">{data.amenities_count}</div>
-        <div className="InfoBox__secondary__title">amenities</div>
-      </div>
-      <div className="col">
-        <div className="InfoBox__secondary__data">{'$'.repeat(data.price_level)}</div>
+        <div className="InfoBox__secondary__data">{'$'.repeat(data.dollar_sign)}</div>
         <div className="InfoBox__secondary__title">price</div>
       </div>
       <div className="col">
-        <div className="InfoBox__secondary__data InfoBox__secondary__data--foodcheck-score">{ data.foodcheck_score }</div>
+        <div className="InfoBox__secondary__data InfoBox__secondary__data--foodcheck-score">{ data.food_check_score }</div>
         <div className="InfoBox__secondary__title">food check score</div>
       </div>
       <div className="col">
