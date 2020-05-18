@@ -18,7 +18,7 @@ service frontend start &
 
 cd ~/foodcheck/back-end
 npm install
-npm run forever >> /dev/null 2>&1  
+npm run forever
 
 exit 0
 EOF
